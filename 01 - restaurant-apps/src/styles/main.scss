@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+$text-hover: #d3ad7f;
+$text-black: #424242;
+$text-white: #efefef;
+$bg-1: #333333;
+$brd: 0.3px solid black;
+
+* {
+  font-family: 'Poppins', Tahoma ,sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: $text-black;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+  overflow-x: hidden;
+}
+
+img {
+  display: flex;
+  width: 100%;
+  user-select: none;
+}
+a, .menu-icon, button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+}
+/* menhilangkan efek biru pada saat klik link di mobile */
+*, *:before, *:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+.title {
+  text-align: center;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* body */
+body {
+  padding-top: 50px;
+}
+
+/* header */
+header {
+  padding: 0 20px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: $bg-1;
+  color: $text-white;
+}
+header .header-logo, 
+header .menu-icon, 
+header .menu-container 
+{z-index: 10;}
+
+header .header-logo img {
+  object-fit: cover;
+  height: 50px;
+  width: auto;
+}
+header .header-logo h1 {
+  font-size: 1rem;
+}
+
+header .menu-icon {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 1.5rem;
+  color: $text-white;
+}
+
+@media screen and (max-width: 700px) {
+  header .menu-icon {
+    display: flex !important;
+    background: $bg-1;
+    border: none;
+  }
+  header .menu-container {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    width: 100%;
+    background: $bg-1;
+  }
+  header .nav {
+    top: -250px; left: 0;
+    width: 100%;
+    position: absolute;
+    background: $bg-1;
+    transition: all 0.5s ease-in-out;
+  }
+
+  header .nav ul {
+    padding-bottom: 10px;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .open {
+    top: 50px !important;
+  }
+}
+
+header .nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  list-style: none;
+}
+header .nav li a {
+  position: relative;
+  color: $text-white;
+}
+
+/* main */
+main {
+  padding: 0 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* card */
+restaurant-list,
+top-restaurant-list {
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+@media screen and (min-width: 700px) {
+  restaurant-list,
+  top-restaurant-list {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 900px) {
+  restaurant-list,
+  top-restaurant-list {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card-image img,
+.card-content
+{width: 100% !important;}
+
+restaurant-item,
+top-restaurant-item {
+  /* max-height: 400px; */
+  display: grid;
+  grid-template-rows: 200px auto;
+  align-content: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.card-image {
+  display: flex;
+  overflow: hidden;
+}
+.card-image img {
+  object-fit: cover;
+  object-position: center;
+  -o-object-fit: cover;
+  transition: none;
+}
+
+.card-content {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-content h3 {
+  color: #999;
+  font-size: 15px;
+}
+.card-content h2 {
+  font-size: 1.3rem;
+  letter-spacing: 0;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-content p {
+  font-size: 0.7rem;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// responsive
+@media screen and (min-width: 1200px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main {
+    width: 1000px;
+  }
+}
+
+// focus
+header .nav a:focus,
+main .title:focus {
+  color: $text-hover;
+}
+
+restaurant-item:focus,
+top-restaurant-item:focus {
+  background: $text-white !important;
+}
+// restaurant-item:focus h2,
+// top-restaurant-item:focus h2 {
+//   border: 2px solid black;
+// }
+
+.skip-link {
+  position: fixed;
+  top: -40px;
+  left: 0;
+  background-color: $bg-1 !important;
+  color: $text-white !important;
+  padding: 8px;
+  z-index: 100;
+}
+ 
+.skip-link:focus {
+   top: 50px;
+   color: $text-hover !important;
+}
