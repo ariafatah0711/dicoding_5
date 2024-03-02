@@ -175,7 +175,13 @@ top-restaurant-item {
   overflow: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  transition: all 0.3s ease-in-out;
 }
+
+// restaurant-item:hover,
+// top-restaurant-item:hover {
+//   transform: translate(-5px, -1px);
+// }
 
 .card-image {
   display: flex;
@@ -193,6 +199,7 @@ top-restaurant-item {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  // -webkit-line-clamp: 4;
 }
 
 .card-content h3 {
