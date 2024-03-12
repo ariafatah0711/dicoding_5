@@ -64,6 +64,7 @@ header {
   width: 100%;
   background: $bg-1;
   color: $text-white;
+  z-index: 10;
 }
 header .header-logo, 
 header .menu-icon, 
@@ -165,7 +166,7 @@ top-restaurant-list {
 
 restaurant-item,
 top-restaurant-item {
-  /* max-height: 400px; */
+  // max-height: 400px;
   display: grid;
   grid-template-rows: 200px auto;
   align-content: flex-start;
@@ -193,13 +194,22 @@ top-restaurant-item {
   -o-object-fit: cover;
   transition: none;
 }
+.card-image h3 {
+  position: absolute;
+  color: $text-white;
+  padding: 5px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  border-radius: 5px 0 0 0;
+}
 
 .card-content {
+  // max-height: 200px;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  // -webkit-line-clamp: 4;
+  -webkit-line-clamp: 4;
 }
 
 .card-content h3 {

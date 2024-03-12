@@ -12,6 +12,7 @@ class RestaurantItem extends HTMLElement {
     this.innerHTML = `
             <div class="card-image">
                 <img src="${this._restaurant.pictureId}" alt="image ${this._restaurant.name}">
+                <h3>${this._restaurant.city}</h3>
             </div>
                 <div class="card-content">
                 <h3>Rating: ${this._restaurant.rating}</h3>
