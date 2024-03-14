@@ -15,7 +15,7 @@ class RestaurantItem extends HTMLElement {
                 <h3>${this._restaurant.city}</h3>
             </div>
                 <div class="card-content">
-                <h3>Rating: ${this._restaurant.rating}</h3>
+                <h3>★ ${this._restaurant.rating}</h3>
                 <h2>${this._restaurant.name}</h2>
                 <p>${this._restaurant.description}</p>
             </div>
