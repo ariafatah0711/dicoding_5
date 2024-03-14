@@ -1,6 +1,6 @@
-import "./top-restaurant-item.js";
+import "./restaurant-item.js";
 
-class TopRestaurantList extends HTMLElement {
+class RestaurantList extends HTMLElement {
   get restaurants() {
     return this._restaurants;
   }
@@ -12,9 +12,7 @@ class TopRestaurantList extends HTMLElement {
 
   render() {
     this._restaurants.forEach((restaurant) => {
-      const restaurantItemElement = document.createElement(
-        "top-restaurant-item"
-      );
+      const restaurantItemElement = document.createElement("restaurant-item");
       restaurantItemElement.restaurant = restaurant;
       restaurantItemElement.tabIndex = 0;
 
@@ -23,4 +21,4 @@ class TopRestaurantList extends HTMLElement {
   }
 }
 
-customElements.define("top-restaurant-list", TopRestaurantList);
+customElements.define("restaurant-list", RestaurantList);
