@@ -15,6 +15,9 @@ class RestaurantList extends HTMLElement {
       const restaurantItemElement = document.createElement("restaurant-item");
       restaurantItemElement.restaurant = restaurant;
       restaurantItemElement.tabIndex = 0;
+      restaurantItemElement.addEventListener("click", () => {
+        window.location.href = `#/details/${restaurant.id}`;
+      });
 
       this.appendChild(restaurantItemElement);
     });

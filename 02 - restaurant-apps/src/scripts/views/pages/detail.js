@@ -4,7 +4,7 @@
 const Detail = {
   async render() {
     return `
-        details
+        <div id="restaurant-detail" class="restaurant-detail"></div>
       `;
   },
 

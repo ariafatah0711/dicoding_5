@@ -65,29 +65,29 @@ header {
   background: $bg-1;
   color: $text-white;
   z-index: 10;
+  .header-logo, 
+  .menu-icon, 
+  .menu-container {
+    z-index: 10;
+  }
+  .header-logo img {
+    object-fit: cover;
+    height: 50px;
+    width: auto;
+  }
+  .header-logo h1 {
+    font-size: 1rem;
+  }
+  .menu-icon {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 1.5rem;
+    color: $text-white;
+  }
 }
-header .header-logo, 
-header .menu-icon, 
-header .menu-container 
-{z-index: 10;}
 
-header .header-logo img {
-  object-fit: cover;
-  height: 50px;
-  width: auto;
-}
-header .header-logo h1 {
-  font-size: 1rem;
-}
-
-header .menu-icon {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  font-size: 1.5rem;
-  color: $text-white;
-}
 
 @media screen and (max-width: 700px) {
   header .menu-icon {
@@ -173,31 +173,33 @@ restaurant-item {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: translate(0, -4px);
+  }
 }
-
-// restaurant-item:hover,
-// top-restaurant-item:hover {
-//   transform: translate(-5px, -1px);
-// }
 
 .card-image {
   display: flex;
   overflow: hidden;
   transition: all none;
-}
-.card-image img {
-  object-fit: cover;
-  object-position: center;
-  -o-object-fit: cover;
-  transition: all none;
-}
-.card-image h3 {
-  position: absolute;
-  color: $text-white;
-  padding: 5px 15px;
-  background-color: rgba(0, 0, 0, 0.5);
-  font-weight: 500;
-  border-radius: 5px 0 0 0;
+  transition: all 0.3s ease-in-out;
+  img {
+    object-fit: cover;
+    object-position: center;
+    -o-object-fit: cover;
+    transition: all 0.3s ease-in-out;
+  }
+  h3 {
+    position: absolute;
+    color: $text-white;
+    padding: 5px 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+    border-radius: 5px 0 0 0;
+  }
+  &:hover img {
+    transform: scale(1.05);
+  }
 }
 
 .card-content {
@@ -252,14 +254,9 @@ main .title:focus {
   color: $text-hover;
 }
 
-restaurant-item:focus,
-top-restaurant-item:focus {
+restaurant-item:focus {
   background: $text-white !important;
 }
-// restaurant-item:focus h2,
-// top-restaurant-item:focus h2 {
-//   border: 2px solid black;
-// }
 
 .skip-link {
   position: fixed;
