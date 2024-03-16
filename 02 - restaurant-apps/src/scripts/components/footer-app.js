@@ -22,9 +22,8 @@ class FooterApp extends HTMLElement {
           color: #efefef;
         }
       </style>
-        <h1 class="title">Copyright &copy;2024 - Gurih Nusantara</h1>
+      <h1 class="title">Copyright &copy;2024 - Gurih Nusantara</h1>
       `;
-    // this.tabIndex = 0;
   }
 }
 

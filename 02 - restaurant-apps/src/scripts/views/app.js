@@ -3,7 +3,7 @@ import UrlParser from "../routes/url-parser.js";
 import routes from "../routes/routes";
 
 class App {
-  constructor({ button, drawer, content, images }) {
+  constructor({ button, drawer, content }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;

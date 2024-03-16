@@ -1,4 +1,4 @@
-import RestaurantApiSource from "../../data/restaurant-api-source";
+// import RestaurantApiSource from "../../data/restaurant-api-source";
 
 const Favorite = {
   async render() {
