@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "idb": "^7.0.1",
-    "jquery": "^3.7.1",
     "regenerator-runtime": "^0.13.9",
     "workbox-precaching": "^7.0.0",
     "workbox-routing": "^7.0.0",

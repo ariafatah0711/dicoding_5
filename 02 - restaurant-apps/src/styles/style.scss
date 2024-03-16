@@ -176,6 +176,9 @@ restaurant-item {
   &:hover {
     transform: translate(0, -4px);
   }
+  :focus {
+    background: $text-white !important;
+  }
 }
 
 .card-image {
@@ -191,6 +194,7 @@ restaurant-item {
   }
   h3 {
     position: absolute;
+    // top: 0; left: 0;
     color: $text-white;
     padding: 5px 15px;
     background-color: rgba(0, 0, 0, 0.5);
@@ -220,12 +224,17 @@ restaurant-item {
   padding: 0 20px;
 }
 .card-content h2 {
-  padding-right: 30px;
+  display: flex;
+  padding-right: 35px;
   font-size: 1.3rem;
   letter-spacing: 0;
   white-space: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  a:hover, a:focus {
+    color: $text-hover !important;
+    background: none !important;
+  }
 }
 
 .card-content p {
@@ -254,9 +263,9 @@ main .title:focus {
   color: $text-hover;
 }
 
-restaurant-item:focus {
-  background: $text-white !important;
-}
+// restaurant-item:focus {
+//   background: $text-white !important;
+// }
 
 .skip-link {
   position: fixed;

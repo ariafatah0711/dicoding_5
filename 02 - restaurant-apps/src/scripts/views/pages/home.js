@@ -1,24 +1,22 @@
-// import TheMovieDbSource from "../../data/themoviedb-source";
-// import { createMovieItemTemplate } from "../templates/template-creator";
-// data
-import $ from "jquery";
-import datas from "../../data/DATA.json";
+import RestaurantApiSource from "../../data/restaurant-api-source";
+import { createRestaurantItemTemplate } from "../templates/template-creator";
 
 const Home = {
   async render() {
     return `
         <h1 tabindex="0" id="explore" class="title">explore restaurant</h1>
-        <restaurant-list id="restaurant"></restaurant-list>
+        <restaurant-list id="restaurant-list"></restaurant-list>
     `;
   },
 
   async afterRender() {
-    $(`restaurant-list`).prop(`restaurants`, datas.restaurants);
-    // const movies = await TheMovieDbSource.nowPlayingMovies();
-    // const moviesContainer = document.querySelector("#movies");
-    // movies.forEach((movie) => {
-    //   moviesContainer.innerHTML += createMovieItemTemplate(movie);
-    // });
+    const restaurantContainer = document.querySelector("#restaurant-list");
+    const restaurants = await RestaurantApiSource.listRestaurant();
+
+    console.log(restaurants);
+    restaurants.forEach((restaurant) => {
+      restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+    });
   },
 };
 

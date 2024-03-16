@@ -3,7 +3,7 @@ import "../styles/style.scss";
 
 // components
 import "../scripts/components/hero-app.js";
-import "../scripts/components/restaurant-list.js";
+// import "../scripts/components/restaurant-list.js";
 import "../scripts/components/footer-app.js";
 
 import App from "./views/app";
