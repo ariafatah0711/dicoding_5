@@ -3,7 +3,7 @@ import UrlParser from "../routes/url-parser.js";
 import routes from "../routes/routes";
 
 class App {
-  constructor({ button, drawer, content }) {
+  constructor({ button, drawer, content, images }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
@@ -17,11 +17,10 @@ class App {
       drawer: this._drawer,
       content: this._content,
     });
-
-    // kita bisa menginisiasikan komponen lain bila ada
   }
 
   async renderPage() {
+    window.scrollTo(0, 0);
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();

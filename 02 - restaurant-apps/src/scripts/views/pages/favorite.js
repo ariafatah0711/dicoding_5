@@ -1,19 +1,18 @@
-// import TheMovieDbSource from "../../data/themoviedb-source";
-// import { createMovieItemTemplate } from "../templates/template-creator";
+import RestaurantApiSource from "../../data/restaurant-api-source";
 
 const Favorite = {
   async render() {
     return `
-          favorite
-        `;
+      <hero-app class="hero"></hero-app>
+      <main>
+        <h1 tabindex="0" id="favorite" class="title">favorite restaurant</h1>
+        <restaurant-favorite-list id="restaurant-list"></restaurant-favorite-list>
+      </main>
+    `;
   },
 
   async afterRender() {
-    // const movies = await TheMovieDbSource.nowPlayingMovies();
-    // const moviesContainer = document.querySelector("#movies");
-    // movies.forEach((movie) => {
-    //   moviesContainer.innerHTML += createMovieItemTemplate(movie);
-    // });
+    // test
   },
 };
 

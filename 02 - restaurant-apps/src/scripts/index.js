@@ -3,7 +3,6 @@ import "../styles/style.scss";
 
 // components
 import "../scripts/components/hero-app.js";
-// import "../scripts/components/restaurant-list.js";
 import "../scripts/components/footer-app.js";
 
 import App from "./views/app";
@@ -15,7 +14,8 @@ import App from "./views/app";
 const app = new App({
   button: document.querySelector("#menu"),
   drawer: document.querySelector("#drawer"),
-  content: document.querySelector("main"),
+  images: document.querySelectorAll("img"),
+  content: document.querySelector("#mainContent"),
 });
 
 window.addEventListener("hashchange", () => {

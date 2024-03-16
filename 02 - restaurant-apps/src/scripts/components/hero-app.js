@@ -8,7 +8,7 @@ class HeroApp extends HTMLElement {
     this.innerHTML = `
         <style>
             .hero {
-                height: 200px;
+                max-height: 200px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
