@@ -3,8 +3,10 @@
 $text-hover: #d3ad7f;
 $text-black: #424242;
 $text-white: #efefef;
+$text-detail: #394867;
 $bg-1: #333333;
 $brd: 0.3px solid black;
+$top-padding: 70px;
 
 * {
   font-family: 'Poppins', Tahoma ,sans-serif;
@@ -60,11 +62,12 @@ img, a {
 
 /* body */
 body {
-  padding-top: 50px;
+  padding-top: $top-padding;
 }
 
 /* header */
 header {
+  height: $top-padding;
   padding: 0 20px 0 10px;
   display: flex;
   justify-content: space-between;
@@ -82,8 +85,9 @@ header {
   }
   .header-logo img {
     object-fit: cover;
-    height: 50px;
+    height: $top-padding;
     width: auto;
+    background: $bg-1;
   }
   .header-logo h1 {
     font-size: 1rem;
@@ -92,15 +96,15 @@ header {
     display: none;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    font-size: 1.5rem;
+    height: $top-padding;
+    font-size: 1.8rem;
     color: $text-white;
   }
   .nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 20px;
+    column-gap: 40px;
     list-style: none;
   }
   .nav li a {
@@ -136,7 +140,7 @@ header {
     row-gap: 10px;
   }
   .open {
-    top: 50px !important;
+    top: $top-padding !important;
   }
 }
 
@@ -147,6 +151,7 @@ section {
   justify-content: baseline;
   align-items: center;
   min-height: 95vh;
+  width: 100%;
 }
 main {
   padding: 0 10px 10px 10px;
@@ -257,6 +262,88 @@ restaurant-item {
     -webkit-box-orient: vertical;
   }
 }
+
+/* detail */
+restaurant-detail {
+  $p-detail: 20px;
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  // display: grid;
+  // grid-template-columns: 50% 50%;
+  padding: 10px 50px !important;
+  gap: 20px 20px;
+  
+  .detail-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-column: 2 span;
+    border-bottom: 3px solid $text-black;
+    h1 {
+      display: flex;
+      align-items: center;
+      padding-right: 10px;
+      font-size: 1.8em;
+      a {
+        font-size: 1.8em;
+        &:hover {
+          color: $text-hover;
+        }
+      }
+    }
+  }
+  .detail-content {
+    img {
+      width: 65%;
+      float: left;
+      margin-right: 15px;
+    }
+    h1 {
+      display: grid;
+      grid-template-columns: 85px auto;
+      font-size: 1em;
+      opacity: 0.9;
+      span {
+        color: $text-detail;
+        &::before {
+          content: ": ";
+          color: $text-black;
+        }
+      }
+    }
+    p {
+      padding-top: 10px;
+      text-indent: 30px;
+      text-align: justify;
+      line-height: 1.3;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  restaurant-detail {
+      font-size: 90%;
+      padding: 10px 10px !important;
+    img {
+      min-width: 100% !important;
+      float: none !important;
+      padding-bottom: 10px;
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  restaurant-detail {
+    .detail-title {
+      h1 {
+        font-size: 1.3rem;
+      }
+    }
+    img {
+      width: 60% !important;
+    }
+  }
+}
+
 
 // responsive
 @media screen and (min-width: 1200px) {

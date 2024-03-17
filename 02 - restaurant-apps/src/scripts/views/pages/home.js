@@ -16,6 +16,8 @@ const Home = {
     const restaurantContainer = document.querySelector("#restaurant-list");
     const restaurants = await RestaurantApiSource.listRestaurant();
 
+    console.log(restaurants);
+
     restaurants.forEach((restaurant) => {
       restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
     });

@@ -5,8 +5,7 @@ import UrlParser from "../../routes/url-parser";
 const Detail = {
   async render() {
     return `
-        <h1 tabindex="0" id="detail" class="title">detail restaurant</h1>
-        <div id="restaurant-detail" class="restaurant-detail"></div>
+        <restaurant-detail id="restaurant-detail" class="restaurant-detail"></restaurant-detail>
       `;
   },
 
@@ -19,8 +18,7 @@ const Detail = {
       console.log(restaurant);
       restaurantContainer.innerHTML += createRestaurantDetailTemplate(restaurant);
     } catch (error) {
-      restaurantContainer.innerHTML += `<p>Upps... Maaf restorant dengan ${url.id} tidak bisa diakses <br/> Coba periksa koneksi anda </p></p>`;
-      // restaurantContainer.innerHTML += `<p id="page-none">Upps... Maaf halaman tidak bisa diakses <br/> Coba periksa koneksi anda </p>`;
+      restaurantContainer.innerHTML += `<p id="page-none">Upps... Maaf halaman tidak bisa diakses <br/> Coba periksa koneksi anda </p>`;
     }
   },
 };
