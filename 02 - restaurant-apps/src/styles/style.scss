@@ -20,7 +20,7 @@ $border-col: #e5ebf8;
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 50px;
+  scroll-padding-top: $top-padding;
   overflow-x: hidden;
 }
 
@@ -158,6 +158,32 @@ main {
   padding: 0 10px 10px 10px;
   display: flex;
   flex-direction: column;
+}
+
+.hero {
+  position: relative;
+}
+restaurant-search form {
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: 40% auto;
+  justify-content: center;
+  input {
+    min-width: 100px !important;
+    padding: 10px;
+    display: flex;
+    background: inherit;
+    border: 1px solid $text-black;
+    border-radius: 8px;
+  }
+  button {
+    margin-left: -10px;
+    padding: 10px;
+    display: flex;
+    background: $text-detail;
+    color: $text-white;
+    border-radius: 8px;
+  }
 }
 
 /* restaurant-list */
@@ -424,7 +450,7 @@ restaurant-detail {
       }
       textarea {
         display: flex;
-        padding: 2px 10px;
+        padding: 10px;
         border-radius: inherit;
         border: inherit;
       }
@@ -520,14 +546,14 @@ main .title:focus {
 // skip link
 .skip-link {
   position: fixed;
-  top: -40px;
+  top: -100px;
   left: 0;
   background-color: $bg-1 !important;
   color: $text-white !important;
   padding: 8px;
   z-index: 100;
   &:focus {
-     top: 50px;
+     top: $top-padding;
      color: $text-hover !important;
   }
 }

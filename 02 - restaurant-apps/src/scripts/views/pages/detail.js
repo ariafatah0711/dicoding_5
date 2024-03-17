@@ -1,5 +1,6 @@
 import RestaurantApiSource from "../../data/restaurant-api-source";
 import { createRestaurantDetailTemplate } from "../templates/template-creator";
+import { postReview } from "../../utils/api-handler";
 import UrlParser from "../../routes/url-parser";
 
 const Detail = {
@@ -20,6 +21,12 @@ const Detail = {
     } catch (error) {
       restaurantContainer.innerHTML += `<p id="page-none">Upps... Maaf halaman tidak bisa diakses <br/> Coba periksa koneksi anda </p>`;
     }
+
+    const submitReview = document.querySelector("#form-submit");
+    submitReview.addEventListener("click", (event) => {
+      event.preventDefault();
+      postReview();
+    });
   },
 };
 

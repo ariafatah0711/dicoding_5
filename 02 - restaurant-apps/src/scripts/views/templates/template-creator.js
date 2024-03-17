@@ -1,5 +1,12 @@
 import CONFIG from "../../globals/config";
 
+const createRestaurantSearchTemplate = () => `
+    <form>
+        <input id="input-search" type="text" placeholder="search" require autocomplete="off" maxlength="20">
+        <button type="submit" id="search-submit">cari</button>
+    </form>
+`;
+
 const createRestaurantItemTemplate = (restaurant) => `
     <restaurant-item>
         <div class="card-image">
@@ -15,10 +22,6 @@ const createRestaurantItemTemplate = (restaurant) => `
         </div>
     </restaurant-item>
 `;
-
-{
-  /* <div class="detail-image"></div>; */
-}
 
 const createRestaurantDetailTemplate = (restaurant) => `
     <div class="detail-title">
@@ -86,14 +89,12 @@ const createRestaurantDetailTemplate = (restaurant) => `
         <form class="form-review">
             <h1>tambahkan ulasanmu</h1>
             <label for="input-name">name: </label>
-            <input type="text" id="input-name" placeholder="nama" require autocomplete="off">
+            <input id="input-name" type="text" placeholder="nama" require autocomplete="off" maxlength="30">
             <label for="input-review">review: </label>
-            <textarea id="review" rows="4" placeholder="ulasan"></textarea>
-            <button type="submit">kirim</button>
+            <textarea id="input-review" rows="4" maxlength="120" placeholder="ulasan"></textarea>
+            <button type="submit" id="form-submit">kirim</button>
         </form>
     </div>
 `;
 
-// <input type="text" id="input-review" placeholder="review" require autocomplete="off">
-
-export { createRestaurantItemTemplate, createRestaurantDetailTemplate };
+export { createRestaurantSearchTemplate, createRestaurantItemTemplate, createRestaurantDetailTemplate };

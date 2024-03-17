@@ -1,5 +1,7 @@
 import RestaurantApiSource from "../../data/restaurant-api-source";
-import { createRestaurantItemTemplate } from "../templates/template-creator";
+import { createRestaurantSearchTemplate, createRestaurantItemTemplate } from "../templates/template-creator";
+// import { createRestaurantItemTemplate } from "../templates/template-creator";
+import { searchRestaurant } from "../../utils/api-handler";
 
 const Home = {
   async render() {
@@ -7,19 +9,27 @@ const Home = {
         <hero-app class="hero"></hero-app>
         <main>
           <h1 tabindex="0" id="explore" class="title">explore restaurant</h1>
+          <restaurant-search id="restaurant-search"></restaurant-search>
           <restaurant-list id="restaurant-list"></restaurant-list>
         </main>
     `;
   },
 
   async afterRender() {
-    const restaurantContainer = document.querySelector("#restaurant-list");
+    const restaurantListContainer = document.querySelector("#restaurant-list");
+    const restaurantSearchContainer = document.querySelector("restaurant-search");
+
+    restaurantSearchContainer.innerHTML = createRestaurantSearchTemplate();
+    const restaurantSearchSubmitContainer = document.querySelector("main restaurant-search #search-submit");
+
     const restaurants = await RestaurantApiSource.listRestaurant();
-
-    console.log(restaurants);
-
     restaurants.forEach((restaurant) => {
-      restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+      restaurantListContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+    });
+
+    restaurantSearchSubmitContainer.addEventListener("click", (event) => {
+      event.preventDefault();
+      searchRestaurant();
     });
   },
 };
