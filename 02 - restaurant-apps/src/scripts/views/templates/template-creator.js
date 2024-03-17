@@ -39,6 +39,23 @@ const createRestaurantDetailTemplate = (restaurant) => `
             <p class="description">${restaurant.description}</p>
         </div>
     </div>
+
+    <div class="detail-menu">
+        <div class="detail-foods">
+            <h1>makanan</h1>
+            <ul>
+                ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join("")}
+            </ul>
+        </div>
+        <div class="detail-drinks">
+            <h1>minuman</h1>
+            <ul>
+                ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join("")}
+            </ul>
+        </div>
+ 
+
+    </div>
 `;
 
 export { createRestaurantItemTemplate, createRestaurantDetailTemplate };
