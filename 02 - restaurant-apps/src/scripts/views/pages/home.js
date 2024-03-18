@@ -1,6 +1,5 @@
 import RestaurantApiSource from "../../data/restaurant-api-source";
 import { createRestaurantSearchTemplate, createRestaurantItemTemplate } from "../templates/template-creator";
-// import { createRestaurantItemTemplate } from "../templates/template-creator";
 import { searchRestaurant } from "../../utils/api-handler";
 
 const Home = {
@@ -22,11 +21,13 @@ const Home = {
     restaurantSearchContainer.innerHTML = createRestaurantSearchTemplate();
     const restaurantSearchSubmitContainer = document.querySelector("main restaurant-search #search-submit");
 
+    // restaurant-list
     const restaurants = await RestaurantApiSource.listRestaurant();
     restaurants.forEach((restaurant) => {
       restaurantListContainer.innerHTML += createRestaurantItemTemplate(restaurant);
     });
 
+    // restaurant-search
     restaurantSearchSubmitContainer.addEventListener("click", (event) => {
       event.preventDefault();
       searchRestaurant();

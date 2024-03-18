@@ -50,23 +50,29 @@ const postReview = async () => {
 
 const searchRestaurant = async () => {
   const searchInput = document.querySelector("#input-search");
-  const main = document.querySelector("restaurant-list");
 
-  if (!searchInput.value) {
-    main.innerHTML = "Masukkan kata kunci pencarian";
+  if (!searchInput.value | (searchInput.value === "")) {
+    location.reload();
     return;
   }
 
   try {
+    // const const;
     const datas = await RestaurantApiSource.searchRestaurant(searchInput.value);
     const restaurantListContainer = document.querySelector("#restaurant-list");
     restaurantListContainer.innerHTML = "";
     datas.forEach((data) => {
       restaurantListContainer.innerHTML += createRestaurantItemTemplate(data);
     });
-    console.log(datas);
   } catch (error) {
-    console.log(error);
+    // const filter = input.value.toUpperCase();
+    // const li = document.querySelectorAll("restaurant-item")
+    // for (let i = 0; i < li.length; i++) {
+    //   const title = li[i].getElementsByTagName(".card-content h2")[0];
+    //   txtValue = title.textContent || title.innerText;
+    //   console.log(txtValue);
+    // }
+    // console.log(title);
   }
 };
 
