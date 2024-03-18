@@ -6,7 +6,7 @@ import "../scripts/components/hero-app.js";
 import "../scripts/components/footer-app.js";
 
 import App from "./views/app";
-// import swRegister from "./utils/sw-register";
+import swRegister from "./utils/sw-register";
 // import WebSocketInitiator from "./utils/websocket-initiator";
 // import FooterToolsInitiator from "./utils/footer-tools-initiator";
 // import CONFIG from "./globals/config";
@@ -24,6 +24,6 @@ window.addEventListener("hashchange", () => {
 
 window.addEventListener("load", async () => {
   app.renderPage();
-  //   await swRegister();
+  await swRegister();
   //   WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
 });

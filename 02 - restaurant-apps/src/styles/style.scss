@@ -69,7 +69,7 @@ body {
 /* header */
 header {
   height: $top-padding;
-  padding: 0 20px 0 10px;
+  padding: 0 20px 0 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,6 +85,7 @@ header {
     z-index: 10;
   }
   .header-logo img {
+    padding: 10px;
     object-fit: cover;
     height: $top-padding;
     width: auto;
