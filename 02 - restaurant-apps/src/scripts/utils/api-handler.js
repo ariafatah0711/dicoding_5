@@ -57,11 +57,20 @@ const searchRestaurant = async (mode = "online") => {
   if (mode === "offline") {
     search(searchInput);
     searchInputContainer.value = "";
+    return;
   }
 
   try {
     const datas = await RestaurantApiSource.searchRestaurant(searchInput);
     restaurantListContainer.innerHTML = "";
+    if (datas.length === 0) {
+      restaurantListContainer.innerHTML = `
+        <div class="page-none-container">
+          <p id="page-none">tidak dapat menemukan ${query.toLowerCase()}</p>
+        </div>
+      `;
+      return;
+    }
     datas.forEach((data) => {
       restaurantListContainer.innerHTML += createRestaurantItemTemplate(data);
     });

@@ -21,7 +21,6 @@ const Home = {
     restaurantSearchContainer.innerHTML = createRestaurantSearchTemplate();
     const restaurantSearchSubmitContainer = document.querySelector("main restaurant-search #search-submit");
 
-    // restaurant-list
     const restaurants = await RestaurantApiSource.listRestaurant();
     restaurants.forEach((restaurant) => {
       restaurantListContainer.innerHTML += createRestaurantItemTemplate(restaurant);

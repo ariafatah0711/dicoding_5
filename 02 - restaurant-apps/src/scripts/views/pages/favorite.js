@@ -1,4 +1,5 @@
-// import RestaurantApiSource from "../../data/restaurant-api-source";
+import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
+import { createRestaurantItemTemplate } from "../templates/template-creator";
 
 const Favorite = {
   async render() {
@@ -6,13 +7,25 @@ const Favorite = {
       <hero-app class="hero"></hero-app>
       <main>
         <h1 tabindex="0" id="favorite" class="title">favorite restaurant</h1>
-        <restaurant-favorite-list id="restaurant-list"></restaurant-favorite-list>
+        <restaurant-list id="restaurant-list"></restaurant-list>
       </main>
     `;
   },
 
   async afterRender() {
-    // test
+    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    const restaurantListContainer = document.querySelector("#restaurant-list");
+    restaurants.forEach((restaurant) => {
+      restaurantListContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+    });
+
+    if (restaurants.length === 0) {
+      restaurantListContainer.innerHTML += `
+        <div class="page-none-container">
+          <p id="page-none">Belum ada restoran favorit yang ditambahkan :(</p>
+        </div>
+      `;
+    }
   },
 };
 

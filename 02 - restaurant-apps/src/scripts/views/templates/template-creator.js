@@ -12,6 +12,7 @@ const createRestaurantItemTemplate = (restaurant) => `
         <div class="card-image">
             <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="image ${restaurant.name}">
             <h3>${restaurant.city}</h3>
+            <i class="${restaurant.icon}" aria-hidden="true"></i>
         </div>
         <div class="card-content">
             <h3>★ ${restaurant.rating}</h3>
@@ -25,7 +26,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 
 const createRestaurantDetailTemplate = (restaurant) => `
     <div class="detail-title">
-        <h1><a href="#/home">⇱</a>${restaurant.name}</h1>
+        <h1><a href="javascript:void(0);" onclick="window.history.back()">⇱</a>${restaurant.name}</h1>
         <span>(${restaurant.city})</span>
     </div>
 
@@ -97,4 +98,22 @@ const createRestaurantDetailTemplate = (restaurant) => `
     </div>
 `;
 
-export { createRestaurantSearchTemplate, createRestaurantItemTemplate, createRestaurantDetailTemplate };
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this restaurant" id="likeButton" class="like">
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
+export {
+  createRestaurantSearchTemplate,
+  createRestaurantItemTemplate,
+  createRestaurantDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+};

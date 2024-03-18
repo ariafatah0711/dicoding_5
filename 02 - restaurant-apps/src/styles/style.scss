@@ -238,6 +238,7 @@ restaurant-item {
 }
 
 .card-image {
+  position: relative;
   display: flex;
   overflow: hidden;
   transition: all none;
@@ -256,6 +257,13 @@ restaurant-item {
     background-color: rgba(0, 0, 0, 0.5);
     font-weight: 500;
     border-radius: 5px 0 5px 0;
+  }
+  i {
+    position: absolute;
+    top: 0; right: 0;
+    padding: 8px;
+    color: $text-white;
+    font-size: 22px;
   }
   &:hover img {
     transform: scale(1.05);
@@ -472,6 +480,22 @@ restaurant-detail {
     }
   }
 }
+
+.like {
+  height: 55px; width: 55px;
+  position: fixed;
+  right: 16px; bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 50%;
+  border: none;
+  // background: $text-black;
+  color: $text-white;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 700px) {
   restaurant-detail {
       font-size: 90%;
@@ -565,5 +589,32 @@ main .title:focus {
   &:focus {
      top: $top-padding;
      color: $text-hover !important;
+  }
+}
+
+// page-none
+.page-none-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: span 3;
+  grid-column: span 3;
+  height: 50vh;
+  // border: $brd;
+}
+#page-none {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  font-size: 1rem;
+  span {
+    margin: 0 5px;
+    color: $text-black;
+    cursor: pointer;
+    &:hover {
+      color: $text-hover;
+    }
   }
 }

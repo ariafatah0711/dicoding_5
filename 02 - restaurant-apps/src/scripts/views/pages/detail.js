@@ -1,12 +1,14 @@
 import RestaurantApiSource from "../../data/restaurant-api-source";
 import { createRestaurantDetailTemplate } from "../templates/template-creator";
 import { postReview } from "../../utils/api-handler";
+import LikeButtonInitiator from "../../utils/like-button-initiator";
 import UrlParser from "../../routes/url-parser";
 
 const Detail = {
   async render() {
     return `
         <restaurant-detail id="restaurant-detail" class="restaurant-detail"></restaurant-detail>
+        <div id="likeButtonContainer"></div>
       `;
   },
 
@@ -16,17 +18,34 @@ const Detail = {
 
     try {
       const restaurant = await RestaurantApiSource.detailRestaurant(url.id);
-      console.log(restaurant);
       restaurantContainer.innerHTML += createRestaurantDetailTemplate(restaurant);
-    } catch (error) {
-      restaurantContainer.innerHTML += `<p id="page-none">Upps... Maaf halaman tidak bisa diakses <br/> Coba periksa koneksi anda </p>`;
-    }
 
-    const submitReview = document.querySelector("#form-submit");
-    submitReview.addEventListener("click", (event) => {
-      event.preventDefault();
-      postReview();
-    });
+      LikeButtonInitiator.init({
+        likeButtonContainer: document.querySelector("#likeButtonContainer"),
+        restaurant: {
+          id: restaurant.id,
+          name: restaurant.name,
+          city: restaurant.city,
+          pictureId: restaurant.pictureId,
+          rating: restaurant.rating,
+          description: restaurant.description,
+          fav: true,
+          icon: "fa fa-heart",
+        },
+      });
+
+      const submitReview = document.querySelector("#form-submit");
+      submitReview.addEventListener("click", (event) => {
+        event.preventDefault();
+        postReview();
+      });
+    } catch (error) {
+      restaurantContainer.innerHTML += `
+        <div class="page-none-container">
+          <p id="page-none">Upps... Maaf halaman tidak bisa diakses <span onclick="location.reload()">refresh</span> Coba periksa koneksi anda</p>
+        </div>
+      `;
+    }
   },
 };
 
