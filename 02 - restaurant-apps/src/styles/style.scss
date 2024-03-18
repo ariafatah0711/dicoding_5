@@ -69,7 +69,7 @@ body {
 /* header */
 header {
   height: $top-padding;
-  padding: 0 20px 0 30px;
+  padding: 0 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,15 +84,28 @@ header {
   .menu-container {
     z-index: 10;
   }
-  .header-logo img {
-    padding: 10px;
-    object-fit: cover;
-    height: $top-padding;
-    width: auto;
-    background: $bg-1;
-  }
-  .header-logo h1 {
-    font-size: 1rem;
+  .header-logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      padding: 10px;
+      object-fit: cover;
+      height: $top-padding;
+      width: auto;
+      background: $bg-1;
+    }
+    h1 {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $text-white;
+      background: $bg-1;
+      font-size: 1.3rem;
+      text-wrap: nowrap;
+    }
   }
   .menu-icon {
     display: none;
@@ -116,30 +129,37 @@ header {
 }
 
 @media screen and (max-width: 700px) {
-  header .menu-icon {
-    display: flex !important;
-    background: $bg-1;
-    border: none;
-  }
-  header .menu-container {
-    display: flex;
-    justify-content: flex-end;
-    flex-grow: 1;
-    width: 100%;
-    background: $bg-1;
-  }
-  header .nav {
-    top: -250px; left: 0;
-    width: 100%;
-    position: absolute;
-    background: $bg-1;
-    transition: all 0.5s ease-in-out;
-  }
-
-  header .nav ul {
-    padding-bottom: 10px;
-    flex-direction: column;
-    row-gap: 10px;
+  header{
+    padding: 0;
+    .header-logo {
+      h1 {
+        font-size: 1rem;
+      }
+    }
+    .menu-icon {
+      display: flex !important;
+      background: $bg-1;
+      border: none;
+    }
+    .menu-container {
+      display: flex;
+      justify-content: flex-end;
+      flex-grow: 1;
+      width: 100%;
+      background: $bg-1;
+    }
+    .nav {
+      top: -250px; left: 0;
+      width: 100%;
+      position: absolute;
+      background: $bg-1;
+      transition: all 0.5s ease-in-out;
+      ul {
+        padding-bottom: 10px;
+        flex-direction: column;
+        row-gap: 10px;
+      }
+    }
   }
   .open {
     top: $top-padding !important;
@@ -603,13 +623,13 @@ main .title:focus {
   height: 50vh;
   // border: $brd;
 }
+
 #page-none {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 50px;
   width: 100%;
   font-size: 1rem;
+  text-align: center;
+  text-wrap: wrap;
   span {
     margin: 0 5px;
     color: $text-black;

@@ -51,9 +51,35 @@ module.exports = {
         },
       ],
     }),
-    new WorkboxWebpackPlugin.InjectManifest({
-      swSrc: path.resolve(__dirname, "src/scripts/sw.js"),
+    new WorkboxWebpackPlugin.GenerateSW({
       swDest: "./sw.bundle.js",
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev/"),
+          handler: "StaleWhileRevalidate",
+          options: {
+            cacheName: "restaurant-api",
+          },
+        },
+        {
+          urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev/images/small/"),
+          handler: "StaleWhileRevalidate",
+          options: {
+            cacheName: "restaurant-image-api",
+          },
+        },
+        {
+          urlPattern: ({ url }) => url.origin === "https://use.fontawesome.com",
+          handler: "StaleWhileRevalidate",
+          options: {
+            cacheName: "font-api",
+          },
+        },
+      ],
     }),
+    // new WorkboxWebpackPlugin.InjectManifest({
+    //   swSrc: path.resolve(__dirname, "src/scripts/sw.js"),
+    //   swDest: "./sw.bundle.js",
+    // }),
   ],
 };

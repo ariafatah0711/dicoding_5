@@ -9,7 +9,7 @@ import App from "./views/app";
 import swRegister from "./utils/sw-register";
 // import WebSocketInitiator from "./utils/websocket-initiator";
 // import FooterToolsInitiator from "./utils/footer-tools-initiator";
-// import CONFIG from "./globals/config";
+// import CONFIG from "./globals/config.js";
 
 const app = new App({
   button: document.querySelector("#menu"),
@@ -25,5 +25,5 @@ window.addEventListener("hashchange", () => {
 window.addEventListener("load", async () => {
   app.renderPage();
   await swRegister();
-  //   WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
+  // WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
 });
