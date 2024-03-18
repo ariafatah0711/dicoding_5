@@ -1,6 +1,7 @@
 import RestaurantApiSource from "../data/restaurant-api-source";
 import UrlParser from "../routes/url-parser";
 import { createRestaurantItemTemplate } from "../views/templates/template-creator";
+import search from "./search-handler";
 
 const postReview = async () => {
   const url = UrlParser.parseActiveUrlWithoutCombiner();
@@ -48,31 +49,26 @@ const postReview = async () => {
   review.value = "";
 };
 
-const searchRestaurant = async () => {
-  const searchInput = document.querySelector("#input-search");
+const searchRestaurant = async (mode = "online") => {
+  const searchInputContainer = document.querySelector("#input-search");
+  const searchInput = document.querySelector("#input-search").value.toUpperCase();
+  const restaurantListContainer = document.querySelector("#restaurant-list");
 
-  if (!searchInput.value | (searchInput.value === "")) {
-    location.reload();
-    return;
+  if (mode === "offline") {
+    search(searchInput);
+    searchInputContainer.value = "";
   }
 
   try {
-    // const const;
-    const datas = await RestaurantApiSource.searchRestaurant(searchInput.value);
-    const restaurantListContainer = document.querySelector("#restaurant-list");
+    const datas = await RestaurantApiSource.searchRestaurant(searchInput);
     restaurantListContainer.innerHTML = "";
     datas.forEach((data) => {
       restaurantListContainer.innerHTML += createRestaurantItemTemplate(data);
     });
   } catch (error) {
-    // const filter = input.value.toUpperCase();
-    // const li = document.querySelectorAll("restaurant-item")
-    // for (let i = 0; i < li.length; i++) {
-    //   const title = li[i].getElementsByTagName(".card-content h2")[0];
-    //   txtValue = title.textContent || title.innerText;
-    //   console.log(txtValue);
-    // }
-    // console.log(title);
+    search(searchInput);
+  } finally {
+    searchInputContainer.value = "";
   }
 };
 

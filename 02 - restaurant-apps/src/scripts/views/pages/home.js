@@ -30,7 +30,7 @@ const Home = {
     // restaurant-search
     restaurantSearchSubmitContainer.addEventListener("click", (event) => {
       event.preventDefault();
-      searchRestaurant();
+      searchRestaurant("offline");
     });
   },
 };
