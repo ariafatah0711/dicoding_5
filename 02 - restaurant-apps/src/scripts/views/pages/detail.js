@@ -1,31 +1,31 @@
-import RestaurantApiSource from "../../data/restaurant-api-source";
-import { createRestaurantDetailTemplate } from "../templates/template-creator";
-import { postReview } from "../../utils/api-handler";
-import LikeButtonInitiator from "../../utils/like-button-initiator";
-import loading from "../../utils/loading-helper";
-import UrlParser from "../../routes/url-parser";
+import RestaurantApiSource from '../../data/restaurant-api-source'
+import { createRestaurantDetailTemplate } from '../templates/template-creator'
+import { postReview } from '../../utils/api-handler'
+import LikeButtonInitiator from '../../utils/like-button-initiator'
+import loading from '../../utils/loading-helper'
+import UrlParser from '../../routes/url-parser'
 
 const Detail = {
-  async render() {
+  async render () {
     return `
         <loading-circle></loading-circle>
         <restaurant-detail id="restaurant-detail" class="restaurant-detail"></restaurant-detail>
         <div id="likeButtonContainer"></div>
-      `;
+      `
   },
 
-  async afterRender() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurantContainer = document.querySelector("#restaurant-detail");
-    loading.show();
+  async afterRender () {
+    const url = UrlParser.parseActiveUrlWithoutCombiner()
+    const restaurantContainer = document.querySelector('#restaurant-detail')
+    loading.show()
 
     try {
-      const restaurant = await RestaurantApiSource.detailRestaurant(url.id);
-      loading.hidden();
+      const restaurant = await RestaurantApiSource.detailRestaurant(url.id)
+      loading.hidden()
 
-      restaurantContainer.innerHTML += createRestaurantDetailTemplate(restaurant);
+      restaurantContainer.innerHTML += createRestaurantDetailTemplate(restaurant)
       LikeButtonInitiator.init({
-        likeButtonContainer: document.querySelector("#likeButtonContainer"),
+        likeButtonContainer: document.querySelector('#likeButtonContainer'),
         restaurant: {
           id: restaurant.id,
           name: restaurant.name,
@@ -34,24 +34,24 @@ const Detail = {
           rating: restaurant.rating,
           description: restaurant.description,
           fav: true,
-          icon: "fa fa-heart",
-        },
-      });
+          icon: 'fa fa-heart'
+        }
+      })
 
-      const submitReview = document.querySelector("#form-submit");
-      submitReview.addEventListener("click", (event) => {
-        event.preventDefault();
-        postReview();
-      });
+      const submitReview = document.querySelector('#form-submit')
+      submitReview.addEventListener('click', (event) => {
+        event.preventDefault()
+        postReview()
+      })
     } catch (error) {
-      loading.hidden();
+      loading.hidden()
       restaurantContainer.innerHTML += `
         <div class="page-none-container">
           <p id="page-none">Upps... Maaf halaman tidak bisa diakses <span onclick="location.reload()">refresh</span> Coba periksa koneksi anda</p>
         </div>
-      `;
+      `
     }
-  },
-};
+  }
+}
 
-export default Detail;
+export default Detail

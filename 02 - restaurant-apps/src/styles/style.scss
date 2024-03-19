@@ -29,13 +29,13 @@ img {
   width: 100%;
   user-select: none;
 }
-a, .menu-icon, button {
+a, .menu-icon, button, input {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  min-height: 44px;
-  min-width: 44px;
+  min-height: 45px;
+  min-width: 45px;
 }
 /* menhilangkan efek biru pada saat klik link di mobile */
 *, *:before, *:after {

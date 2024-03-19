@@ -1,10 +1,10 @@
 class HeroApp extends HTMLElement {
-  constructor() {
-    super();
-    this.render();
+  constructor () {
+    super()
+    this.render()
   }
 
-  render() {
+  render () {
     this.innerHTML = `
         <style>
             .hero {
@@ -16,8 +16,8 @@ class HeroApp extends HTMLElement {
             }
         </style>
         <img src="./images/heros/hero-image_2.jpg" alt="">
-    `;
+    `
   }
 }
 
-customElements.define("hero-app", HeroApp);
+customElements.define('hero-app', HeroApp)

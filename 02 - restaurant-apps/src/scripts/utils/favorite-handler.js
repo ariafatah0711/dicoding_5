@@ -1,18 +1,18 @@
-import FavoriteRestaurantIdb from "../data/favorite-restaurant-idb";
+import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb'
 
 const addFavorite = async (restaurants) => {
-  const restaurantFavorite = await FavoriteRestaurantIdb.getAllRestaurants();
+  const restaurantFavorite = await FavoriteRestaurantIdb.getAllRestaurants()
   if (restaurants.restaurants) {
     restaurants.restaurants.forEach((restaurant) => {
-      restaurant.icon = "fa fa-heart-o";
+      restaurant.icon = 'fa fa-heart-o'
       restaurantFavorite.forEach((fav) => {
-        if (restaurant.name == fav.name) {
-          restaurant.icon = "fa fa-heart";
+        if (restaurant.name === fav.name) {
+          restaurant.icon = 'fa fa-heart'
         }
-      });
-    });
+      })
+    })
   }
-  return restaurants;
-};
+  return restaurants
+}
 
-export default addFavorite;
+export default addFavorite

@@ -1,30 +1,30 @@
-import RestaurantApiSource from "../data/restaurant-api-source";
-import UrlParser from "../routes/url-parser";
-import { createRestaurantItemTemplate } from "../views/templates/template-creator";
-import search from "./search-handler";
+import RestaurantApiSource from '../data/restaurant-api-source'
+import UrlParser from '../routes/url-parser'
+import { createRestaurantItemTemplate } from '../views/templates/template-creator'
+import search from './search-handler'
 
 const postReview = async () => {
-  const url = UrlParser.parseActiveUrlWithoutCombiner();
-  const name = document.querySelector("#input-name");
-  const review = document.querySelector("#input-review");
-  const detailReviewContainer = document.querySelector(".detail-review ul");
+  const url = UrlParser.parseActiveUrlWithoutCombiner()
+  const name = document.querySelector('#input-name')
+  const review = document.querySelector('#input-review')
+  const detailReviewContainer = document.querySelector('.detail-review ul')
 
-  if (name.value === "" || review.value === "") {
-    alert("nama dan review harus diisi");
-    return;
+  if (name.value === '' || review.value === '') {
+    alert('nama dan review harus diisi')
+    return
   }
 
   const data = {
     id: url.id,
     name: name.value,
-    review: review.value,
-  };
+    review: review.value
+  }
 
-  const date = new Date().toLocaleDateString("id-ID", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const date = new Date().toLocaleDateString('id-ID', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
 
   const reviewTemplate = `
     <li>
@@ -41,44 +41,44 @@ const postReview = async () => {
             <p>${data.review}</p>
         </div>
     </li>
-  `;
+  `
 
-  await RestaurantApiSource.postReview(data);
-  detailReviewContainer.innerHTML += reviewTemplate;
-  name.value = "";
-  review.value = "";
-};
+  await RestaurantApiSource.postReview(data)
+  detailReviewContainer.innerHTML += reviewTemplate
+  name.value = ''
+  review.value = ''
+}
 
-const searchRestaurant = async (mode = "online") => {
-  const searchInputContainer = document.querySelector("#input-search");
-  const searchInput = document.querySelector("#input-search").value.toUpperCase();
-  const restaurantListContainer = document.querySelector("#restaurant-list");
+const searchRestaurant = async (mode = 'online') => {
+  const searchInputContainer = document.querySelector('#input-search')
+  const searchInput = document.querySelector('#input-search').value.toUpperCase()
+  const restaurantListContainer = document.querySelector('#restaurant-list')
 
-  if (mode === "offline") {
-    search(searchInput);
-    searchInputContainer.value = "";
-    return;
+  if (mode === 'offline') {
+    search(searchInput)
+    searchInputContainer.value = ''
+    return
   }
 
   try {
-    const datas = await RestaurantApiSource.searchRestaurant(searchInput);
-    restaurantListContainer.innerHTML = "";
+    const datas = await RestaurantApiSource.searchRestaurant(searchInput)
+    restaurantListContainer.innerHTML = ''
     if (datas.length === 0) {
       restaurantListContainer.innerHTML = `
         <div class="page-none-container">
-          <p id="page-none">tidak dapat menemukan ${query.toLowerCase()}</p>
+          <p id="page-none">tidak dapat menemukan ${searchInput.toLowerCase()}</p>
         </div>
-      `;
-      return;
+      `
+      return
     }
     datas.forEach((data) => {
-      restaurantListContainer.innerHTML += createRestaurantItemTemplate(data);
-    });
+      restaurantListContainer.innerHTML += createRestaurantItemTemplate(data)
+    })
   } catch (error) {
-    search(searchInput);
+    search(searchInput)
   } finally {
-    searchInputContainer.value = "";
+    searchInputContainer.value = ''
   }
-};
+}
 
-export { postReview, searchRestaurant };
+export { postReview, searchRestaurant }

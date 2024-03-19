@@ -1,10 +1,10 @@
 class FooterApp extends HTMLElement {
-  constructor() {
-    super();
-    this.render();
+  constructor () {
+    super()
+    this.render()
   }
 
-  render() {
+  render () {
     this.innerHTML = `
       <style>
         footer-app {
@@ -23,8 +23,8 @@ class FooterApp extends HTMLElement {
         }
       </style>
       <h1 class="title">Copyright &copy;2024 - Gurih Nusantara</h1>
-      `;
+      `
   }
 }
 
-customElements.define("footer-app", FooterApp);
+customElements.define('footer-app', FooterApp)

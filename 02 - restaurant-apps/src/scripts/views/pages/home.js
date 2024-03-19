@@ -1,10 +1,10 @@
-import RestaurantApiSource from "../../data/restaurant-api-source";
-import { createRestaurantSearchTemplate, createRestaurantItemTemplate } from "../templates/template-creator";
-import { searchRestaurant } from "../../utils/api-handler";
-import loading from "../../utils/loading-helper";
+import RestaurantApiSource from '../../data/restaurant-api-source'
+import { createRestaurantSearchTemplate, createRestaurantItemTemplate } from '../templates/template-creator'
+import { searchRestaurant } from '../../utils/api-handler'
+import loading from '../../utils/loading-helper'
 
 const Home = {
-  async render() {
+  async render () {
     return `
         <hero-app class="hero"></hero-app>
         <main>
@@ -13,28 +13,28 @@ const Home = {
           <loading-circle></loading-circle>
           <restaurant-list id="restaurant-list"></restaurant-list>
         </main>
-    `;
+    `
   },
 
-  async afterRender() {
-    const restaurantListContainer = document.querySelector("#restaurant-list");
-    const restaurantSearchContainer = document.querySelector("restaurant-search");
-    restaurantSearchContainer.innerHTML = createRestaurantSearchTemplate();
-    const restaurantSearchSubmitContainer = document.querySelector("main restaurant-search #search-submit");
+  async afterRender () {
+    const restaurantListContainer = document.querySelector('#restaurant-list')
+    const restaurantSearchContainer = document.querySelector('restaurant-search')
+    restaurantSearchContainer.innerHTML = createRestaurantSearchTemplate()
+    const restaurantSearchSubmitContainer = document.querySelector('main restaurant-search #search-submit')
 
-    loading.show();
-    const restaurants = await RestaurantApiSource.listRestaurant();
-    loading.hidden();
+    loading.show()
+    const restaurants = await RestaurantApiSource.listRestaurant()
+    loading.hidden()
 
     restaurants.forEach((restaurant) => {
-      restaurantListContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-    });
+      restaurantListContainer.innerHTML += createRestaurantItemTemplate(restaurant)
+    })
 
-    restaurantSearchSubmitContainer.addEventListener("click", (event) => {
-      event.preventDefault();
-      searchRestaurant("offline");
-    });
-  },
-};
+    restaurantSearchSubmitContainer.addEventListener('click', (event) => {
+      event.preventDefault()
+      searchRestaurant('offline')
+    })
+  }
+}
 
-export default Home;
+export default Home

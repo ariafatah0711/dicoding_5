@@ -6,7 +6,7 @@
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "lint": "eslint ./src",
+    "lint": "eslint ./src --fix",
     "serve": "http-server dist --port 9000",
     "bs": "npm run build && npm run serve"
   },
