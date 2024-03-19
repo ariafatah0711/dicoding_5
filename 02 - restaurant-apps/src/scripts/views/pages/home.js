@@ -17,7 +17,6 @@ const Home = {
   async afterRender() {
     const restaurantListContainer = document.querySelector("#restaurant-list");
     const restaurantSearchContainer = document.querySelector("restaurant-search");
-
     restaurantSearchContainer.innerHTML = createRestaurantSearchTemplate();
     const restaurantSearchSubmitContainer = document.querySelector("main restaurant-search #search-submit");
 
@@ -26,7 +25,6 @@ const Home = {
       restaurantListContainer.innerHTML += createRestaurantItemTemplate(restaurant);
     });
 
-    // restaurant-search
     restaurantSearchSubmitContainer.addEventListener("click", (event) => {
       event.preventDefault();
       searchRestaurant("offline");

@@ -1,4 +1,4 @@
-// import NotificationHelper from "./notification-helper";
+import NotifHelper from "./notif-helper";
 import CONFIG from "../globals/config";
 
 const WebSocketInitiator = {
@@ -7,16 +7,17 @@ const WebSocketInitiator = {
     webSocket.onmessage = this._onMessageHandler;
   },
 
-  //   _onMessageHandler(message) {
-  //     const movie = JSON.parse(message.data);
-  //     NotificationHelper.sendNotification({
-  //       title: `${movie.title} is on cinema!`,
-  //       options: {
-  //         body: movie.overview,
-  //         image: `${CONFIG.BASE_IMAGE_URL + movie.poster_path}`,
-  //       },
-  //     });
-  //   },
+  _onMessageHandler(message) {
+    NotifHelper.sendNotification({
+      title: `restaurant hari ini ${message.data}`,
+      options: {
+        body: "ada rekomendasi restaurant baru untukmu",
+        icon: "./favicon.png",
+        image: `${CONFIG.BASE_IMAGE_URL + message.data || CONFIG.BASE_IMAGE_URL + "03"}`,
+        vibrate: [200, 100, 200],
+      },
+    });
+  },
 };
 
 export default WebSocketInitiator;

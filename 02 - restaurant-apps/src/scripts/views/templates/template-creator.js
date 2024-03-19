@@ -80,7 +80,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
                             <p>${customerReview.review}</p>
                         </div>
                     </li>
-            `
+                `
               )
               .join("")}
         </ul>
