@@ -14,7 +14,6 @@ import swRegister from "./utils/sw-register";
 const app = new App({
   button: document.querySelector("#menu"),
   drawer: document.querySelector("#drawer"),
-  images: document.querySelectorAll("img"),
   content: document.querySelector("#mainContent"),
 });
 
