@@ -2,11 +2,13 @@ import RestaurantApiSource from "../../data/restaurant-api-source";
 import { createRestaurantDetailTemplate } from "../templates/template-creator";
 import { postReview } from "../../utils/api-handler";
 import LikeButtonInitiator from "../../utils/like-button-initiator";
+import loading from "../../utils/loading-helper";
 import UrlParser from "../../routes/url-parser";
 
 const Detail = {
   async render() {
     return `
+        <loading-circle></loading-circle>
         <restaurant-detail id="restaurant-detail" class="restaurant-detail"></restaurant-detail>
         <div id="likeButtonContainer"></div>
       `;
@@ -15,9 +17,12 @@ const Detail = {
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurantContainer = document.querySelector("#restaurant-detail");
+    loading.show();
 
     try {
       const restaurant = await RestaurantApiSource.detailRestaurant(url.id);
+      loading.hidden();
+
       restaurantContainer.innerHTML += createRestaurantDetailTemplate(restaurant);
       LikeButtonInitiator.init({
         likeButtonContainer: document.querySelector("#likeButtonContainer"),
@@ -39,6 +44,7 @@ const Detail = {
         postReview();
       });
     } catch (error) {
+      loading.hidden();
       restaurantContainer.innerHTML += `
         <div class="page-none-container">
           <p id="page-none">Upps... Maaf halaman tidak bisa diakses <span onclick="location.reload()">refresh</span> Coba periksa koneksi anda</p>

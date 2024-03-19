@@ -1,6 +1,7 @@
 import RestaurantApiSource from "../../data/restaurant-api-source";
 import { createRestaurantSearchTemplate, createRestaurantItemTemplate } from "../templates/template-creator";
 import { searchRestaurant } from "../../utils/api-handler";
+import loading from "../../utils/loading-helper";
 
 const Home = {
   async render() {
@@ -9,6 +10,7 @@ const Home = {
         <main>
           <h1 tabindex="0" id="explore" class="title">explore restaurant</h1>
           <restaurant-search id="restaurant-search"></restaurant-search>
+          <loading-circle></loading-circle>
           <restaurant-list id="restaurant-list"></restaurant-list>
         </main>
     `;
@@ -20,7 +22,10 @@ const Home = {
     restaurantSearchContainer.innerHTML = createRestaurantSearchTemplate();
     const restaurantSearchSubmitContainer = document.querySelector("main restaurant-search #search-submit");
 
+    loading.show();
     const restaurants = await RestaurantApiSource.listRestaurant();
+    loading.hidden();
+
     restaurants.forEach((restaurant) => {
       restaurantListContainer.innerHTML += createRestaurantItemTemplate(restaurant);
     });

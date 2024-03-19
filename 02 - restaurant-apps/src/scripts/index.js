@@ -2,6 +2,7 @@ import "regenerator-runtime";
 import "../styles/style.scss";
 import "../scripts/components/hero-app.js";
 import "../scripts/components/footer-app.js";
+import "../scripts/components/loading.js";
 
 /* script */
 import App from "./views/app";

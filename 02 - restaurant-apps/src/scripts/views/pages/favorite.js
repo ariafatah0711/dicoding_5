@@ -1,5 +1,6 @@
 import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
 import { createRestaurantItemTemplate } from "../templates/template-creator";
+import loading from "../../utils/loading-helper";
 
 const Favorite = {
   async render() {
@@ -7,6 +8,7 @@ const Favorite = {
       <hero-app class="hero"></hero-app>
       <main>
         <h1 tabindex="0" id="favorite" class="title">favorite restaurant</h1>
+        <loading-circle></loading-circle>
         <restaurant-list id="restaurant-list"></restaurant-list>
       </main>
     `;
@@ -14,6 +16,8 @@ const Favorite = {
 
   async afterRender() {
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    loading.hidden();
+
     const restaurantListContainer = document.querySelector("#restaurant-list");
 
     restaurants.forEach((restaurant) => {
