@@ -7,6 +7,7 @@
     "start-dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint ./src --fix",
+    "test": "jest",
     "serve": "http-server dist --port 9000",
     "bs": "npm run build && npm run serve"
   },
@@ -14,8 +15,9 @@
   "author": "ariafatah ariafatah07@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.18.5",
-    "@babel/preset-env": "^7.18.2",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@jest/globals": "^29.6.1",
     "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.10.0",
@@ -25,8 +27,12 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
+    "fake-indexeddb": "^4.0.2",
     "html-webpack-plugin": "^5.5.0",
     "http-server": "^14.1.1",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
+    "jest-mock": "^29.7.0",
     "sass": "^1.72.0",
     "sass-loader": "^14.1.1",
     "style-loader": "^3.3.4",
@@ -38,10 +44,16 @@
   },
   "dependencies": {
     "idb": "^7.0.1",
+    "jest": "^29.7.0",
     "regenerator-runtime": "^0.13.9",
     "workbox-precaching": "^7.0.0",
     "workbox-routing": "^7.0.0",
     "workbox-strategies": "^7.0.0",
     "workbox-window": "^6.5.3"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
