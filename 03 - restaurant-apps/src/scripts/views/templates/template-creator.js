@@ -16,7 +16,7 @@ const createRestaurantItemTemplate = (restaurant) => `
         </div>
         <div class="card-content">
             <h3>★ ${restaurant.rating}</h3>
-            <h2>
+            <h2 class="restaurant__title">
                 <a href="#/detail/${restaurant.id}">${restaurant.name}</a>
             </h2>
             <p>${restaurant.description}</p>
