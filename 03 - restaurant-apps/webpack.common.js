@@ -6,6 +6,7 @@ const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 // const ImageminMozjpeg = require("imagemin-mozjpeg");
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
@@ -52,6 +53,8 @@ module.exports = {
           {
             loader: "css-loader",
           },
+          MiniCssExtractPlugin.loader,
+          "css-loader",
         ],
       },
       {
@@ -121,10 +124,10 @@ module.exports = {
       ],
       overrideExtension: true,
     }),
-    // new BundleAnalyzerPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: "static",
       openAnalyzer: false,
     }),
+    new MiniCssExtractPlugin(),
   ],
 };

@@ -437,7 +437,7 @@ var CONFIG = {
 /* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(552);
 /* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(395);
+/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(853);
 /* harmony import */ var _scripts_components_hero_app_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(194);
 /* harmony import */ var _scripts_components_hero_app_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scripts_components_hero_app_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _scripts_components_footer_app_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(329);
@@ -455,8 +455,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 /* component and css */
+// import "../styles/style.scss";
 
-// import "../styles/style.css";
 // import "../styles/style-minify.css";
 
 
