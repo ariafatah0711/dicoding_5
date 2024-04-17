@@ -5,7 +5,6 @@ import "lazysizes/plugins/parent-fit/ls.parent-fit";
 /* component and css */
 // import "../styles/style.scss";
 import "../styles/style.css";
-// import "../styles/style-minify.css";
 import "../scripts/components/hero-app.js";
 import "../scripts/components/footer-app.js";
 import "../scripts/components/loading.js";

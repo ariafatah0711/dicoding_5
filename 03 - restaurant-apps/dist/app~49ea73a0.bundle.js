@@ -71,14 +71,16 @@ var HeroApp = /*#__PURE__*/function (_HTMLElement) {
   _createClass(HeroApp, [{
     key: "render",
     value: function render() {
-      this.innerHTML = "\n        <style>\n            .hero {\n              display: flex;\n              min-width: 100%;\n            }\n            .hero picture {\n              max-height: 200px;\n              min-width: 100%;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n              overflow: hidden;\n            }\n        </style>\n        \n        <picture>\n          <source media=\"(max-width: 600px)\" srcset=\"./images/heros/hero-image_2-small.jpg\">\n          <source media=\"(min-width: 601px)\" srcset=\"./images/heros/hero-image_2-medium.jpg\">\n          <img src='./images/heros/hero-image_2-small.jpg' alt=\"\">\n        </picture>\n        ";
+      this.innerHTML = "\n        <style>\n            .hero {\n              display: flex;\n              min-width: 100%;\n            }\n            .hero {\n              max-height: 200px;\n              min-width: 100%;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n              overflow: hidden;\n            }\n        </style>\n\n        <img src='./images/heros/hero-image_2-small.jpg' srcset='./images/heros/hero-image_2-small.jpg 480w, ./images/heros/hero-image_2-medium.jpg 1080w' alt=\"\" loading=\"eager\">\n       ";
     }
   }]);
   return HeroApp;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
 {
-  // <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg">
-  // <source media="(max-width: 1200px)" srcset="./images/heros/hero-image_2.jpg">
+  //   <picture>
+  //   <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg">
+  // </picture>
+  // <source media="(min-width: 601px)" srcset="./images/heros/hero-image_2-medium.jpg">
   // <img src='./images/heros/hero-image_2-small.jpg' alt="">
   /* <img src="./images/heros/hero-image_2.jpg" alt=""></img> */
 }
@@ -457,7 +459,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* component and css */
 // import "../styles/style.scss";
 
-// import "../styles/style-minify.css";
 
 
 

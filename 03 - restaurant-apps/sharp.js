@@ -15,15 +15,15 @@ if (!fs.existsSync(destination)) {
 
 fs.readdirSync(target).forEach((image) => {
   sharp(`${target}/${image}`)
-    .resize(1200)
+    .resize(800)
     .toFile(path.resolve(__dirname, `${destination}/${image.split(".").slice(0, -1).join(".")}-large.jpg`));
 
   sharp(`${target}/${image}`)
-    .resize(800)
+    .resize(600)
     .toFile(path.resolve(__dirname, `${destination}/${image.split(".").slice(0, -1).join(".")}-medium.jpg`));
 
   sharp(`${target}/${image}`)
-    .resize(600)
+    .resize(480)
     .toFile(path.resolve(__dirname, `${destination}/${image.split(".").slice(0, -1).join(".")}-small.jpg`));
 });
 
@@ -37,6 +37,6 @@ if (!fs.existsSync(destination2)) {
 
 fs.readdirSync(target2).forEach((image) => {
   sharp(`${target2}/${image}`)
-    .resize(600)
+    .resize(480)
     .toFile(path.resolve(__dirname, `${destination2}/${image.split(".").slice(0, -1).join(".")}.png`));
 });

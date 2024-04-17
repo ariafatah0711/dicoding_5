@@ -265,13 +265,14 @@ restaurant-item :focus {
   -o-object-fit: cover;
   transition: all 0.3s ease-in-out;
 }
-.card-image h3 {
+.card-image h1 {
   position: absolute;
   color: #efefef;
   padding: 5px 15px;
   background-color: rgba(0, 0, 0, 0.5);
   font-weight: 500;
   border-radius: 5px 0 5px 0;
+  font-size: 1.3rem ;
 }
 .card-image i {
   position: absolute;
@@ -292,8 +293,8 @@ restaurant-item :focus {
   gap: 2px;
   position: relative;
 }
-.card-content h3 {
-  color: #999;
+.card-content h1 {
+  opacity: 0.75;
   font-size: 15px;
   position: absolute;
   right: 0;
@@ -563,7 +564,7 @@ main .title:focus {
   color: #d3ad7f;
 }
 
-.skip-link {
+#skip-link {
   position: fixed;
   top: -100px;
   left: 0;
@@ -572,7 +573,7 @@ main .title:focus {
   padding: 8px;
   z-index: 100;
 }
-.skip-link:focus {
+#skip-link:focus {
   top: 70px;
   color: #d3ad7f !important;
 }

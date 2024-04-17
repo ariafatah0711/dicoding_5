@@ -81,7 +81,6 @@ module.exports = {
           from: path.resolve(__dirname, "src/public"),
           to: path.resolve(__dirname, "dist"),
           globOptions: {
-            // CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
             ignore: ["**/images/**"],
           },
         },
@@ -91,24 +90,31 @@ module.exports = {
       swDest: "./sw.bundle.js",
       runtimeCaching: [
         {
-          urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev/"),
+          urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev/images"),
           handler: "StaleWhileRevalidate",
           options: {
             cacheName: "restaurant-api",
           },
         },
+        // {
+        //   urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev/images/small/"),
+        //   handler: "StaleWhileRevalidate",
+        //   options: {
+        //     cacheName: "restaurant-image-api",
+        //   },
+        // },
+        // {
+        //   urlPattern: ({ url }) => url.origin === "https://use.fontawesome.com",
+        //   handler: "StaleWhileRevalidate",
+        //   options: {
+        //     cacheName: "icon",
+        //   },
+        // },
         {
-          urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev/images/small/"),
+          urlPattern: ({ url }) => url.origin === "https://fonts.googleapis.com",
           handler: "StaleWhileRevalidate",
           options: {
-            cacheName: "restaurant-image-api",
-          },
-        },
-        {
-          urlPattern: ({ url }) => url.origin === "https://use.fontawesome.com",
-          handler: "StaleWhileRevalidate",
-          options: {
-            cacheName: "font-api",
+            cacheName: "font-poopins",
           },
         },
       ],

@@ -261,7 +261,7 @@ top-restaurant-item:focus {
 //   border: 2px solid black;
 // }
 
-.skip-link {
+#skip-link {
   position: fixed;
   top: -40px;
   left: 0;
@@ -271,7 +271,7 @@ top-restaurant-item:focus {
   z-index: 100;
 }
  
-.skip-link:focus {
+#skip-link:focus {
    top: 50px;
    color: $text-hover !important;
 }

@@ -11,11 +11,11 @@ const createRestaurantItemTemplate = (restaurant) => `
     <restaurant-item>
         <div class="card-image">
             <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="image ${restaurant.name}">
-            <h3>${restaurant.city}</h3>
+            <h1>${restaurant.city}</h1>
             <i class="${restaurant.icon}" aria-hidden="true"></i>
         </div>
         <div class="card-content">
-            <h3>★ ${restaurant.rating}</h3>
+            <h1>★ ${restaurant.rating}</h1>
             <h2 class="restaurant__title">
                 <a href="#/detail/${restaurant.id}">${restaurant.name}</a>
             </h2>
