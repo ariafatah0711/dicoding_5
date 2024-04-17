@@ -2,6 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
+// const ImageminMozjpeg = () => import("imagemin-mozjpeg");
+const ImageminMozjpeg = require("imagemin-mozjpeg");
 
 module.exports = {
   entry: {
@@ -75,6 +78,14 @@ module.exports = {
             cacheName: "font-api",
           },
         },
+      ],
+    }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        ImageminMozjpeg({
+          quality: 50,
+          progressive: true,
+        }),
       ],
     }),
   ],
