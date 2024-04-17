@@ -10,7 +10,7 @@ const createRestaurantSearchTemplate = () => `
 const createRestaurantItemTemplate = (restaurant) => `
     <restaurant-item>
         <div class="card-image">
-            <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="image ${restaurant.name}">
+            <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="image ${restaurant.name}">
             <h3>${restaurant.city}</h3>
             <i class="${restaurant.icon}" aria-hidden="true"></i>
         </div>
@@ -32,7 +32,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
     <div class="detail-content">
         <div class="detail-iamge">
-            <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="image ${restaurant.name}">
+            <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="image ${restaurant.name}">
         </div>
         <div class="detail-article">
             <h1>rating <span>${restaurant.rating} / 5.0</span></h1>
