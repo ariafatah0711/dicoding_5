@@ -54,9 +54,9 @@
 <p id="related"></p>
 
 ## 📈 related
-<a href="https://ariafatah0711.github.io/dicoding_5/01 - restaurant-apps/dist/" alt="DEMO 1"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO-1&message=WEB&color=000000"></a>
-<a href="https://ariafatah0711.github.io/dicoding_5/" alt="DEMO-2"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO&message=WEB&color=000000"></a>
-<a href="https://ariafatah0711.github.io/dicoding_5/dist" alt="DEMO-3"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO&message=WEB&color=000000"></a>
+<a href="https://ariafatah0711.github.io/dicoding_5/01%20-%20restaurant-apps/dist/" alt="DEMO 1"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO-1&message=WEB&color=000000"></a>
+<a href="https://ariafatah0711.github.io/dicoding_5/02%20-%20restaurant-apps/dist/" alt="DEMO-2"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO&message=WEB&color=000000"></a>
+<a href="https://ariafatah0711.github.io/dicoding_5/03%20-%20restaurant-apps/dist/" alt="DEMO-3"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO&message=WEB&color=000000"></a>
 
 <p id="license"></p>
 

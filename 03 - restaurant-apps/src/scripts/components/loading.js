@@ -1,14 +1,15 @@
 class LoadingCircle extends HTMLElement {
-  connectedCallback () {
-    this.render()
+  connectedCallback() {
+    this.render();
   }
 
-  render () {
+  render() {
     this.innerHTML = `
       <style>
         .loader-wrapper{
           width: 100%;
-          height: 50vh;
+          /* height: 50vh; */
+          height: 100vh;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -114,8 +115,8 @@ class LoadingCircle extends HTMLElement {
               <div></div>
           </div>
       </div>
-      `
+      `;
   }
 }
 
-customElements.define('loading-circle', LoadingCircle)
+customElements.define("loading-circle", LoadingCircle);

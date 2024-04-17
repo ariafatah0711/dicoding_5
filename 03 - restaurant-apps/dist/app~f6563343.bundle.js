@@ -50,12 +50,12 @@ var App = /*#__PURE__*/function () {
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              skipLink = document.querySelector('#skip-link');
-              headerElement = document.querySelector('header');
-              window.addEventListener('scroll', function () {
-                headerElement.classList.toggle('scrolled', window.scrollY > 0);
+              skipLink = document.querySelector(".skip-link");
+              headerElement = document.querySelector("header");
+              window.addEventListener("scroll", function () {
+                headerElement.classList.toggle("scrolled", window.scrollY > 0);
               });
-              skipLink.addEventListener('click', function (event) {
+              skipLink.addEventListener("click", function (event) {
                 event.preventDefault();
                 window.scrollBy(0, 200);
                 skipLink.blur();

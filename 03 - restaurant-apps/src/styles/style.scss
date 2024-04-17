@@ -239,6 +239,8 @@ restaurant-list {
 }
 
 restaurant-item {
+  min-height: 200px;
+  min-width: 200px;
   display: grid;
   grid-template-rows: 200px auto;
   align-content: flex-start;
@@ -602,16 +604,18 @@ main .title:focus {
 }
 
 // skip link
-#skip-link {
-  position: fixed;
-  top: -100px;
-  left: 0;
+.skip-link {
+  display: block;
+  position: absolute;
+  top: 70px;
+  left: -200px;
   background-color: $bg-1 !important;
   color: $text-white !important;
   padding: 8px;
   z-index: 100;
   &:focus {
-     top: $top-padding;
+    top: $top-padding;
+    left: 0;
      color: $text-hover !important;
   }
 }

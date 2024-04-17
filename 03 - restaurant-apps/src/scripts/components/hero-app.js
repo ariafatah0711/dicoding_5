@@ -10,6 +10,7 @@ class HeroApp extends HTMLElement {
             .hero {
               display: flex;
               min-width: 100%;
+              min-height: 200px;
             }
             .hero {
               max-height: 200px;
@@ -21,7 +22,7 @@ class HeroApp extends HTMLElement {
             }
         </style>
 
-        <img src='./images/heros/hero-image_2-small.jpg' srcset='./images/heros/hero-image_2-small.jpg 480w, ./images/heros/hero-image_2-medium.jpg 1080w' alt="" loading="eager">
+        <img src='./images/heros/hero-image_2-small.jpg' srcset='./images/heros/hero-image_2-small.jpg 480w, ./images/heros/hero-image_2-medium.jpg 600w,  ./images/heros/hero-image_2-medium.jpg 800w' alt="">
        `;
   }
 }

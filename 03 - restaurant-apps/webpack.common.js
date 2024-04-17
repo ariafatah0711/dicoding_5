@@ -96,20 +96,13 @@ module.exports = {
             cacheName: "restaurant-api",
           },
         },
-        // {
-        //   urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev/images/small/"),
-        //   handler: "StaleWhileRevalidate",
-        //   options: {
-        //     cacheName: "restaurant-image-api",
-        //   },
-        // },
-        // {
-        //   urlPattern: ({ url }) => url.origin === "https://use.fontawesome.com",
-        //   handler: "StaleWhileRevalidate",
-        //   options: {
-        //     cacheName: "icon",
-        //   },
-        // },
+        {
+          urlPattern: ({ url }) => url.origin === "https://use.fontawesome.com",
+          handler: "StaleWhileRevalidate",
+          options: {
+            cacheName: "icon",
+          },
+        },
         {
           urlPattern: ({ url }) => url.origin === "https://fonts.googleapis.com",
           handler: "StaleWhileRevalidate",
