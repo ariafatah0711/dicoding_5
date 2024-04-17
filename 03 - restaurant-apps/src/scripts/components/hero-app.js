@@ -23,7 +23,7 @@ class HeroApp extends HTMLElement {
         
         <picture>
           <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg">
-          <source media="(min-width: 601px)" srcset="./images/heros/hero-image_2-large.jpg">
+          <source media="(min-width: 601px)" srcset="./images/heros/hero-image_2-medium.jpg">
           <img src='./images/heros/hero-image_2-small.jpg' alt="">
         </picture>
         `;

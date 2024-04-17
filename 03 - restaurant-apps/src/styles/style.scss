@@ -10,14 +10,15 @@ $top-padding: 70px;
 $border-col: #e5ebf8;
 
 * {
-  font-family: 'Poppins', Tahoma ,sans-serif;
+  font-family: 'Poppins', Tahoma;
   margin: 0; padding: 0;
   box-sizing: border-box;
   outline: none;
-  text-decoration: none;
   text-transform: capitalize;
+  text-decoration: none;
   color: $text-black;
 }
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: $top-padding;

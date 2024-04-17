@@ -1,15 +1,14 @@
 import "regenerator-runtime";
-import "../styles/style.scss";
-import "../scripts/components/hero-app.js";
-import "../scripts/components/footer-app.js";
-import "../scripts/components/loading.js";
-
-/* lazy loading */
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
-const START = 10;
-const NUMBER_OF_IMAGES = 100;
+/* component and css */
+import "../styles/style.scss";
+// import "../styles/style.css";
+// import "../styles/style-minify.css";
+import "../scripts/components/hero-app.js";
+import "../scripts/components/footer-app.js";
+import "../scripts/components/loading.js";
 
 /* script */
 import App from "./views/app";
