@@ -18,7 +18,12 @@
 
   <header id="home">
     <div class="header-logo">
-      <img src="./favicon-small.webp" alt="icon">
+      <picture>
+        <source media="(max-width: 600px)" srcset="./favicon-small.webp">
+        <source media="(min-width: 601px)" srcset="./favicon-small.png">
+        <img src='./favicon-small.png' alt="icon">
+      </picture>
+      <!-- <img src="./favicon-small.webp" alt="icon"> -->
       <h1 class="title">gurih nusantara</h1>
     </div>
     <div class="menu-container">
