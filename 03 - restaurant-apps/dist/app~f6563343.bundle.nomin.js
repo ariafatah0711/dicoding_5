@@ -61,7 +61,7 @@ var App = /*#__PURE__*/function () {
                 window.scrollBy(0, 200);
                 skipLink.blur();
               });
-              window.location.href.includes("#/favorite") && document.querySelector("restaurant-list") ? document.querySelector("restaurant-list").style.minHeight = "200px" : null;
+              window.location.href.includes("#/favorite") && document.querySelector("restaurant-list") ? document.querySelector("restaurant-list").style.minHeight = "none" : null;
               window.scrollTo(0, 0);
               url = _routes_url_parser_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.parseActiveUrlWithCombiner();
               page = _routes_routes__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A[url];

@@ -459,25 +459,25 @@ var swRegister = /*#__PURE__*/function () {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          if ('serviceWorker' in navigator) {
+          if ("serviceWorker" in navigator) {
             _context.next = 3;
             break;
           }
-          console.log('Service Worker not supported in the browser');
+          console.log("Service Worker not supported in the browser");
           return _context.abrupt("return");
         case 3:
-          wb = new workbox_window__WEBPACK_IMPORTED_MODULE_0__/* .Workbox */ .JK('/sw.bundle.js');
+          wb = new workbox_window__WEBPACK_IMPORTED_MODULE_0__/* .Workbox */ .JK("./sw.bundle.js");
           _context.prev = 4;
           _context.next = 7;
           return wb.register();
         case 7:
-          console.log('Service worker registered');
+          console.log("Service worker registered");
           _context.next = 13;
           break;
         case 10:
           _context.prev = 10;
           _context.t0 = _context["catch"](4);
-          console.log('Failed to register service worker', _context.t0);
+          console.log("Failed to register service worker", _context.t0);
         case 13:
         case "end":
           return _context.stop();
