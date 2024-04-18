@@ -222,7 +222,6 @@ restaurant-list {
 }
 .restaurant-fav {
   min-height: 50vh !important;
-  max-height: 200px !important;
 }
 
 @media screen and (max-width: 700px) {
