@@ -12,7 +12,7 @@ class HeroApp extends HTMLElement {
               min-width: 100%;
               min-height: 200px;
             }
-            .hero {
+            .hero picture {
               max-height: 200px;
               min-width: 100%;
               display: flex;
@@ -21,16 +21,17 @@ class HeroApp extends HTMLElement {
               overflow: hidden;
             }
         </style>
-
-        <img src='./images/heros/hero-image_2-small.jpg' srcset='./images/heros/hero-image_2-small.jpg 480w, ./images/heros/hero-image_2-medium.jpg 600w,  ./images/heros/hero-image_2-medium.jpg 800w' alt="">
-       `;
+        <picture>
+          <source media="(min-width: 800px)" srcset="./images/heros/hero-image_2-medium.jpg">
+          <source media="(min-width: 1200px)" srcset="./images/heros/hero-image_2-large.jpg">
+          <img src="./images/heros/hero-image_2-small.jpg" alt="">
+        </picture>
+    `;
   }
 }
 
 {
-  //   <picture>
-  //   <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg">
-  // </picture>
+  // <img src='./images/heros/hero-image_2-small.jpg' srcset='./images/heros/hero-image_2-small.jpg 480w, ./images/heros/hero-image_2-medium.jpg 600w' alt="">
   // <source media="(min-width: 601px)" srcset="./images/heros/hero-image_2-medium.jpg">
   // <img src='./images/heros/hero-image_2-small.jpg' alt="">
   /* <img src="./images/heros/hero-image_2.jpg" alt=""></img> */
