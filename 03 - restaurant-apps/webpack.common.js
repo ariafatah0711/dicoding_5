@@ -5,7 +5,7 @@ const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const UnminifiedWebpackPlugin = require("unminified-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
@@ -40,7 +40,7 @@ module.exports = {
         },
       },
     },
-    minimizer: [new CssMinimizerPlugin()],
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
   },
   module: {
     rules: [
@@ -159,12 +159,5 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new UnminifiedWebpackPlugin(),
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: {
-          drop_console: true,
-        },
-      },
-    }),
   ],
 };
