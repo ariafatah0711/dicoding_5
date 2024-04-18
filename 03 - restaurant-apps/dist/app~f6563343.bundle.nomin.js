@@ -26,8 +26,7 @@ var App = /*#__PURE__*/function () {
   function App(_ref) {
     var button = _ref.button,
       drawer = _ref.drawer,
-      content = _ref.content,
-      restaurantList = _ref.restaurantList;
+      content = _ref.content;
     _classCallCheck(this, App);
     this._button = button;
     this._drawer = drawer;
@@ -61,17 +60,27 @@ var App = /*#__PURE__*/function () {
                 window.scrollBy(0, 200);
                 skipLink.blur();
               });
-              window.location.href.includes("#/favorite") && document.querySelector("restaurant-list") ? document.querySelector("restaurant-list").style.minHeight = "none" : null;
+
+              // if (window.location.href.includes("#test")) {
+              //   const restaurantList = document.querySelector("restaurant-list");
+              //   console.log(restaurantList);
+              //   if (restaurantList) {
+              //     // restaurantList.style.minHeight = "100px";
+              //     document.body.style.color = "red";
+              //     console.log("test berhasil");
+              //   }
+              // }
+
               window.scrollTo(0, 0);
               url = _routes_url_parser_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.parseActiveUrlWithCombiner();
               page = _routes_routes__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A[url];
-              _context.next = 10;
+              _context.next = 9;
               return page.render();
-            case 10:
+            case 9:
               this._content.innerHTML = _context.sent;
-              _context.next = 13;
+              _context.next = 12;
               return page.afterRender();
-            case 13:
+            case 12:
             case "end":
               return _context.stop();
           }
@@ -203,7 +212,7 @@ var Favorite = {
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            return _context.abrupt("return", "\n      <hero-app class=\"hero\"></hero-app>\n      <main>\n        <h1 tabindex=\"0\" id=\"favorite\" class=\"title\">favorite restaurant</h1>\n        <loading-circle></loading-circle>\n        <restaurant-list id=\"restaurant-list\"></restaurant-list>\n      </main>\n    ");
+            return _context.abrupt("return", "\n      <hero-app class=\"hero\"></hero-app>\n      <main>\n        <h1 tabindex=\"0\" id=\"favorite\" class=\"title\">favorite restaurant</h1>\n        <loading-circle></loading-circle>\n        <restaurant-list id=\"restaurant-list\" class=\"restaurant-fav\"></restaurant-list>\n      </main>\n    ");
           case 1:
           case "end":
             return _context.stop();

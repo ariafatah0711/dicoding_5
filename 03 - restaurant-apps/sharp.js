@@ -19,7 +19,7 @@ fs.readdirSync(target).forEach((image) => {
     .toFile(path.resolve(__dirname, `${destination}/${image.split(".").slice(0, -1).join(".")}-large.jpg`));
 
   sharp(`${target}/${image}`)
-    .resize(800, 300)
+    .resize(800, 250)
     .toFile(path.resolve(__dirname, `${destination}/${image.split(".").slice(0, -1).join(".")}-medium.jpg`));
 
   sharp(`${target}/${image}`)

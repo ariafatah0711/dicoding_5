@@ -3,7 +3,7 @@ import UrlParser from "../routes/url-parser.js";
 import routes from "../routes/routes";
 
 class App {
-  constructor({ button, drawer, content, restaurantList }) {
+  constructor({ button, drawer, content }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
@@ -33,9 +33,15 @@ class App {
       skipLink.blur();
     });
 
-    window.location.href.includes("#/favorite") && document.querySelector("restaurant-list")
-      ? (document.querySelector("restaurant-list").style.minHeight = "none")
-      : null;
+    // if (window.location.href.includes("#test")) {
+    //   const restaurantList = document.querySelector("restaurant-list");
+    //   console.log(restaurantList);
+    //   if (restaurantList) {
+    //     // restaurantList.style.minHeight = "100px";
+    //     document.body.style.color = "red";
+    //     console.log("test berhasil");
+    //   }
+    // }
 
     window.scrollTo(0, 0);
     const url = UrlParser.parseActiveUrlWithCombiner();

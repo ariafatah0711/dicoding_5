@@ -9,7 +9,7 @@ const Favorite = {
       <main>
         <h1 tabindex="0" id="favorite" class="title">favorite restaurant</h1>
         <loading-circle></loading-circle>
-        <restaurant-list id="restaurant-list"></restaurant-list>
+        <restaurant-list id="restaurant-list" class="restaurant-fav"></restaurant-list>
       </main>
     `;
   },
