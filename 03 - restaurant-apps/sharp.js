@@ -16,19 +16,20 @@ if (!fs.existsSync(destination)) {
 fs.readdirSync(target).forEach((image) => {
   sharp(`${target}/${image}`)
     .resize(1200, 200)
-    .jpeg({ quality: 50 })
+    .jpeg({ quality: 33 })
     .toFile(path.resolve(__dirname, `${destination}/${image.split(".").slice(0, -1).join(".")}-large.jpg`));
 
   sharp(`${target}/${image}`)
     // .resize(800, 250)
-    .resize(1313, 410)
-    .jpeg({ quality: 50 })
+    .resize(1200, 350)
+    .jpeg({ quality: 33 })
     .toFile(path.resolve(__dirname, `${destination}/${image.split(".").slice(0, -1).join(".")}-medium.jpg`));
 
   sharp(`${target}/${image}`)
     // .resize(600, 300)
-    .resize(989, 494)
-    .jpeg({ quality: 50 })
+    // .resize(989, 494)
+    .resize(850, 450)
+    .jpeg({ quality: 33 })
     .toFile(path.resolve(__dirname, `${destination}/${image.split(".").slice(0, -1).join(".")}-small.jpg`));
 });
 

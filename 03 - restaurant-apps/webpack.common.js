@@ -40,7 +40,22 @@ module.exports = {
         },
       },
     },
-    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true,
+            drop_debugger: true,
+            dead_code: true,
+            reduce_funcs: true,
+            join_vars: true,
+            collapse_vars: true,
+          },
+          mangle: true,
+        },
+      }),
+    ],
   },
   module: {
     rules: [
