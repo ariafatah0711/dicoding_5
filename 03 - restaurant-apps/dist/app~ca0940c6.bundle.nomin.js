@@ -50,12 +50,12 @@ var App = /*#__PURE__*/function () {
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              skipLink = document.querySelector(".skip-link");
-              headerElement = document.querySelector("header");
-              window.addEventListener("scroll", function () {
-                headerElement.classList.toggle("scrolled", window.scrollY > 0);
+              skipLink = document.querySelector('.skip-link');
+              headerElement = document.querySelector('header');
+              window.addEventListener('scroll', function () {
+                headerElement.classList.toggle('scrolled', window.scrollY > 0);
               });
-              skipLink.addEventListener("click", function (event) {
+              skipLink.addEventListener('click', function (event) {
                 event.preventDefault();
                 window.scrollBy(0, 200);
                 skipLink.blur();
@@ -132,7 +132,7 @@ var Detail = {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
             url = _routes_url_parser__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A.parseActiveUrlWithoutCombiner();
-            restaurantContainer = document.querySelector("#restaurant-detail");
+            restaurantContainer = document.querySelector('#restaurant-detail');
             _utils_loading_helper__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A.show();
             _context2.prev = 3;
             _context2.next = 6;
@@ -142,7 +142,7 @@ var Detail = {
             _utils_loading_helper__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A.hidden();
             restaurantContainer.innerHTML += (0,_templates_template_creator__WEBPACK_IMPORTED_MODULE_1__/* .createRestaurantDetailTemplate */ .TV)(restaurant);
             _utils_like_button_initiator__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.init({
-              likeButtonContainer: document.querySelector("#likeButtonContainer"),
+              likeButtonContainer: document.querySelector('#likeButtonContainer'),
               favoriteRestaurants: _data_favorite_restaurant_idb__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A,
               restaurant: {
                 id: restaurant.id,
@@ -152,11 +152,11 @@ var Detail = {
                 rating: restaurant.rating,
                 description: restaurant.description,
                 fav: true,
-                icon: "fa fa-heart"
+                icon: 'fa fa-heart'
               }
             });
-            submitReview = document.querySelector("#form-submit");
-            submitReview.addEventListener("click", function (event) {
+            submitReview = document.querySelector('#form-submit');
+            submitReview.addEventListener('click', function (event) {
               event.preventDefault();
               (0,_utils_api_handler__WEBPACK_IMPORTED_MODULE_2__/* .postReview */ .X)();
             });
@@ -221,7 +221,7 @@ var Favorite = {
             restaurants = _context2.sent;
             console.log(restaurants);
             _utils_loading_helper__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.hidden();
-            restaurantListContainer = document.querySelector("#restaurant-list");
+            restaurantListContainer = document.querySelector('#restaurant-list');
             restaurants.forEach(function (restaurant) {
               restaurantListContainer.innerHTML += (0,_templates_template_creator__WEBPACK_IMPORTED_MODULE_1__/* .createRestaurantItemTemplate */ .jG)(restaurant);
             });
@@ -278,10 +278,10 @@ var Home = {
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            restaurantListContainer = document.querySelector("#restaurant-list");
-            restaurantSearchContainer = document.querySelector("restaurant-search");
+            restaurantListContainer = document.querySelector('#restaurant-list');
+            restaurantSearchContainer = document.querySelector('restaurant-search');
             restaurantSearchContainer.innerHTML = (0,_templates_template_creator__WEBPACK_IMPORTED_MODULE_1__/* .createRestaurantSearchTemplate */ .Gy)();
-            restaurantSearchSubmitContainer = document.querySelector("main restaurant-search #search-submit");
+            restaurantSearchSubmitContainer = document.querySelector('main restaurant-search #search-submit');
             _utils_loading_helper__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A.show();
             _context2.next = 7;
             return _data_restaurant_api_source__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.listRestaurant();
@@ -292,9 +292,9 @@ var Home = {
             restaurants.forEach(function (restaurant) {
               restaurantListContainer.innerHTML += (0,_templates_template_creator__WEBPACK_IMPORTED_MODULE_1__/* .createRestaurantItemTemplate */ .jG)(restaurant);
             });
-            restaurantSearchSubmitContainer.addEventListener("click", function (event) {
+            restaurantSearchSubmitContainer.addEventListener('click', function (event) {
               event.preventDefault();
-              (0,_utils_api_handler__WEBPACK_IMPORTED_MODULE_2__/* .searchRestaurant */ .m)("offline");
+              (0,_utils_api_handler__WEBPACK_IMPORTED_MODULE_2__/* .searchRestaurant */ .m)('offline');
             });
           case 12:
           case "end":
@@ -331,11 +331,11 @@ var createRestaurantDetailTemplate = function createRestaurantDetailTemplate(res
     return categorie.name;
   }), "</span></h1>\n        </div>\n        <div class=\"detail-description\">\n            <p class=\"description\">").concat(restaurant.description, "</p>\n        </div>\n    </div>\n\n    <h1 class=\"title\">daftar menu</h1>\n    <div class=\"detail-menu\">\n        <div class=\"detail-foods\">\n            <h1>makanan</h1>\n            <ul>\n                ").concat(restaurant.menus.foods.map(function (food) {
     return "<li>".concat(food.name, "</li>");
-  }).join(""), "\n            </ul>\n        </div>\n        <div class=\"detail-drinks\">\n            <h1>minuman</h1>\n            <ul>\n                ").concat(restaurant.menus.drinks.map(function (drink) {
+  }).join(''), "\n            </ul>\n        </div>\n        <div class=\"detail-drinks\">\n            <h1>minuman</h1>\n            <ul>\n                ").concat(restaurant.menus.drinks.map(function (drink) {
     return "<li>".concat(drink.name, "</li>");
-  }).join(""), "\n            </ul>\n        </div>\n    </div>\n\n    <h1 class=\"title\">ulasan review</h1>\n    <div class=\"detail-review\">\n        <ul>\n            ").concat(restaurant.customerReviews.map(function (customerReview) {
+  }).join(''), "\n            </ul>\n        </div>\n    </div>\n\n    <h1 class=\"title\">ulasan review</h1>\n    <div class=\"detail-review\">\n        <ul>\n            ").concat(restaurant.customerReviews.map(function (customerReview) {
     return "\n                    <li>\n                        <div class=\"review-title\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"currentColor\" class=\"icons\">\n                                <path fill-rule=\"evenodd\" d=\"M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z\" clip-rule=\"evenodd\" />\n                            </svg>\n                            <h1>\n                                ".concat(customerReview.name, "\n                                <span>").concat(customerReview.date, "</span>\n                            </h1>\n                        </div>\n                        <div class=\"review-content\">\n                            <p>").concat(customerReview.review, "</p>\n                        </div>\n                    </li>\n                ");
-  }).join(""), "\n        </ul>\n    </div>\n\n    <div class=\"detail-form\">\n        <form class=\"form-review\">\n            <h1>tambahkan ulasanmu</h1>\n            <label for=\"input-name\">name: </label>\n            <input id=\"input-name\" type=\"text\" placeholder=\"nama\" require autocomplete=\"off\" maxlength=\"30\">\n            <label for=\"input-review\">review: </label>\n            <textarea id=\"input-review\" rows=\"4\" maxlength=\"120\" placeholder=\"ulasan\"></textarea>\n            <button type=\"submit\" id=\"form-submit\">kirim</button>\n        </form>\n    </div>\n");
+  }).join(''), "\n        </ul>\n    </div>\n\n    <div class=\"detail-form\">\n        <form class=\"form-review\">\n            <h1>tambahkan ulasanmu</h1>\n            <label for=\"input-name\">name: </label>\n            <input id=\"input-name\" type=\"text\" placeholder=\"nama\" require autocomplete=\"off\" maxlength=\"30\">\n            <label for=\"input-review\">review: </label>\n            <textarea id=\"input-review\" rows=\"4\" maxlength=\"120\" placeholder=\"ulasan\"></textarea>\n            <button type=\"submit\" id=\"form-submit\">kirim</button>\n        </form>\n    </div>\n");
 };
 var createLikeRestaurantButtonTemplate = function createLikeRestaurantButtonTemplate() {
   return "\n  <button aria-label=\"like this restaurant\" id=\"likeButton\" class=\"like\">\n    <i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i>\n  </button>\n";

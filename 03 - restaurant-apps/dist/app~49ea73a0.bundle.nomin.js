@@ -76,13 +76,7 @@ var HeroApp = /*#__PURE__*/function (_HTMLElement) {
   }]);
   return HeroApp;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
-{
-  // <img src='./images/heros/hero-image_2-small.jpg' srcset='./images/heros/hero-image_2-small.jpg 480w, ./images/heros/hero-image_2-medium.jpg 600w' alt="">
-  // <source media="(min-width: 601px)" srcset="./images/heros/hero-image_2-medium.jpg">
-  // <img src='./images/heros/hero-image_2-small.jpg' alt="">
-  /* <img src="./images/heros/hero-image_2.jpg" alt=""></img> */
-}
-customElements.define("hero-app", HeroApp);
+customElements.define('hero-app', HeroApp);
 
 /***/ }),
 
@@ -124,7 +118,7 @@ var LoadingCircle = /*#__PURE__*/function (_HTMLElement) {
   }]);
   return LoadingCircle;
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
-customElements.define("loading-circle", LoadingCircle);
+customElements.define('loading-circle', LoadingCircle);
 
 /***/ }),
 
@@ -149,7 +143,7 @@ var DATABASE_NAME = _globals_config__WEBPACK_IMPORTED_MODULE_1__/* ["default"] *
 var dbPromise = (0,idb__WEBPACK_IMPORTED_MODULE_0__/* .openDB */ .P2)(DATABASE_NAME, DATABASE_VERSION, {
   upgrade: function upgrade(database) {
     database.createObjectStore(OBJECT_STORE_NAME, {
-      keyPath: "id"
+      keyPath: 'id'
     });
   }
 });
@@ -197,7 +191,7 @@ var FavoriteRestaurantIdb = {
       return _regeneratorRuntime().wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
-            if (restaurant.hasOwnProperty("id")) {
+            if (restaurant.hasOwnProperty('id')) {
               _context3.next = 2;
               break;
             }
@@ -467,14 +461,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 // import CONFIG from "./globals/config.js";
 
 var app = new _views_app__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A({
-  button: document.querySelector("#menu"),
-  drawer: document.querySelector("#drawer"),
-  content: document.querySelector("#mainContent")
+  button: document.querySelector('#menu'),
+  drawer: document.querySelector('#drawer'),
+  content: document.querySelector('#mainContent')
 });
-window.addEventListener("hashchange", function () {
+window.addEventListener('hashchange', function () {
   app.renderPage();
 });
-window.addEventListener("load", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+window.addEventListener('load', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
   return _regeneratorRuntime().wrap(function _callee$(_context) {
     while (1) switch (_context.prev = _context.next) {
       case 0:
