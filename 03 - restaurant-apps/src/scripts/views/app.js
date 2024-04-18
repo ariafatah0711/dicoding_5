@@ -33,16 +33,6 @@ class App {
       skipLink.blur();
     });
 
-    // if (window.location.href.includes("#test")) {
-    //   const restaurantList = document.querySelector("restaurant-list");
-    //   console.log(restaurantList);
-    //   if (restaurantList) {
-    //     // restaurantList.style.minHeight = "100px";
-    //     document.body.style.color = "red";
-    //     console.log("test berhasil");
-    //   }
-    // }
-
     window.scrollTo(0, 0);
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];

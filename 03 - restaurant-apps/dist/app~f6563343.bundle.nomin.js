@@ -60,17 +60,6 @@ var App = /*#__PURE__*/function () {
                 window.scrollBy(0, 200);
                 skipLink.blur();
               });
-
-              // if (window.location.href.includes("#test")) {
-              //   const restaurantList = document.querySelector("restaurant-list");
-              //   console.log(restaurantList);
-              //   if (restaurantList) {
-              //     // restaurantList.style.minHeight = "100px";
-              //     document.body.style.color = "red";
-              //     console.log("test berhasil");
-              //   }
-              // }
-
               window.scrollTo(0, 0);
               url = _routes_url_parser_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.parseActiveUrlWithCombiner();
               page = _routes_routes__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A[url];
