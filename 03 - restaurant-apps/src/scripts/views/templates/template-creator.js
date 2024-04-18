@@ -10,7 +10,7 @@ const createRestaurantSearchTemplate = () => `
 const createRestaurantItemTemplate = (restaurant) => `
     <restaurant-item>
         <div class="card-image">
-            <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="image ${restaurant.name}">
+            <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="image ${restaurant.name}">
             <h1>${restaurant.city}</h1>
             <i class="${restaurant.icon}" aria-hidden="true"></i>
         </div>

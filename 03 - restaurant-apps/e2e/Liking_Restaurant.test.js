@@ -6,11 +6,11 @@ Before(({ I }) => {
   I.amOnPage("/#/favorite");
 });
 
-Scenario("showing empty liked movies", ({ I }) => {
+Scenario("showing empty liked restaurants", ({ I }) => {
   I.see("Belum Ada Restoran Favorit Yang Ditambahkan :(", "p");
 });
 
-Scenario("liking one movie", async ({ I }) => {
+Scenario("liking one restaurant", async ({ I }) => {
   I.see("Belum Ada Restoran Favorit Yang Ditambahkan :(", "p");
 
   I.amOnPage("/");

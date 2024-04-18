@@ -137,17 +137,17 @@ module.exports = {
       swDest: "./sw.bundle.js",
       runtimeCaching: [
         {
-          urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev/images"),
+          urlPattern: ({ url }) => url.href.startsWith("https://restaurant-api.dicoding.dev"),
           handler: "StaleWhileRevalidate",
           options: {
             cacheName: "restaurant-api",
           },
         },
         {
-          urlPattern: ({ url }) => url.origin === "https://use.fontawesome.com",
+          urlPattern: ({ url }) => url.origin === "https://kit.fontawesome.com",
           handler: "StaleWhileRevalidate",
           options: {
-            cacheName: "icon",
+            cacheName: "icons-fav",
           },
         },
         {
