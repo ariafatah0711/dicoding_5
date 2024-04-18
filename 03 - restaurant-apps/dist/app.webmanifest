@@ -12,7 +12,7 @@
       "src": "./images/icons/icon-64x64.png",
       "sizes": "64x64",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "maskable"
     },
     {
       "src": "./images/icons/icon-128x128.png",
