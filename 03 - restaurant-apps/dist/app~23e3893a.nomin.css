@@ -106,7 +106,7 @@ header .header-logo h1 {
   color: #efefef;
   background: #333333;
   font-size: 1.3rem;
-  text-wrap: nowrap;
+  /* text-wrap: nowrap; */
 }
 header .menu-icon {
   padding-right: 30px;
