@@ -26,7 +26,8 @@ var App = /*#__PURE__*/function () {
   function App(_ref) {
     var button = _ref.button,
       drawer = _ref.drawer,
-      content = _ref.content;
+      content = _ref.content,
+      restaurantList = _ref.restaurantList;
     _classCallCheck(this, App);
     this._button = button;
     this._drawer = drawer;
@@ -60,16 +61,17 @@ var App = /*#__PURE__*/function () {
                 window.scrollBy(0, 200);
                 skipLink.blur();
               });
+              window.location.href.includes("#/favorite") && document.querySelector("restaurant-list") ? document.querySelector("restaurant-list").style.minHeight = "200px" : null;
               window.scrollTo(0, 0);
               url = _routes_url_parser_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.parseActiveUrlWithCombiner();
               page = _routes_routes__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A[url];
-              _context.next = 9;
+              _context.next = 10;
               return page.render();
-            case 9:
+            case 10:
               this._content.innerHTML = _context.sent;
-              _context.next = 12;
+              _context.next = 13;
               return page.afterRender();
-            case 12:
+            case 13:
             case "end":
               return _context.stop();
           }
