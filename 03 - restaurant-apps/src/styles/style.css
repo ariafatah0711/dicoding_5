@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('https://use.fontawesome.com/0d6ed94a1b.js') format('woff2');
+  font-display: swap;
+}
+
 * {
   font-family: "Poppins", Tahoma;
   margin: 0;
