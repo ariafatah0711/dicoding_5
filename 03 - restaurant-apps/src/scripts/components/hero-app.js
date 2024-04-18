@@ -24,7 +24,7 @@ class HeroApp extends HTMLElement {
         <picture>
           <source media="(min-width: 800px)" srcset="./images/heros/hero-image_2-medium.jpg">
           <source media="(min-width: 1200px)" srcset="./images/heros/hero-image_2-large.jpg">
-          <img src="./images/heros/hero-image_2-small.jpg" alt="">
+          <img class="lazyload" data-src="./images/heros/hero-image_2-small.jpg" alt="">
         </picture>
     `
   }

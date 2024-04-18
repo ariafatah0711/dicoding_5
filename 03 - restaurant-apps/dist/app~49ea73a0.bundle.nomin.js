@@ -71,7 +71,7 @@ var HeroApp = /*#__PURE__*/function (_HTMLElement) {
   _createClass(HeroApp, [{
     key: "render",
     value: function render() {
-      this.innerHTML = "\n        <style>\n            .hero {\n              display: flex;\n              min-width: 100%;\n              min-height: 200px;\n            }\n            .hero picture {\n              /* max-height: 200px; */\n              min-width: 100%;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n              overflow: hidden;\n            }\n        </style>\n        <picture>\n          <source media=\"(min-width: 800px)\" srcset=\"./images/heros/hero-image_2-medium.jpg\">\n          <source media=\"(min-width: 1200px)\" srcset=\"./images/heros/hero-image_2-large.jpg\">\n          <img src=\"./images/heros/hero-image_2-small.jpg\" alt=\"\">\n        </picture>\n    ";
+      this.innerHTML = "\n        <style>\n            .hero {\n              display: flex;\n              min-width: 100%;\n              min-height: 200px;\n            }\n            .hero picture {\n              /* max-height: 200px; */\n              min-width: 100%;\n              display: flex;\n              justify-content: center;\n              align-items: center;\n              overflow: hidden;\n            }\n        </style>\n        <picture>\n          <source media=\"(min-width: 800px)\" srcset=\"./images/heros/hero-image_2-medium.jpg\">\n          <source media=\"(min-width: 1200px)\" srcset=\"./images/heros/hero-image_2-large.jpg\">\n          <img class=\"lazyload\" data-src=\"./images/heros/hero-image_2-small.jpg\" alt=\"\">\n        </picture>\n    ";
     }
   }]);
   return HeroApp;
