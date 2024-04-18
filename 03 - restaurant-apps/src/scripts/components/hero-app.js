@@ -13,7 +13,7 @@ class HeroApp extends HTMLElement {
               min-height: 200px;
             }
             .hero picture {
-              max-height: 200px;
+              /* max-height: 200px; */
               min-width: 100%;
               display: flex;
               justify-content: center;
