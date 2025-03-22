@@ -18,6 +18,12 @@
 <p id="table-of-contents"></p>
 
 ## 📋 Table of Contents
+<details id="back" open>
+  <summary><b>Preview</b></summary>
+
+  <img src="./preview.png">
+</details>
+
 <details>
   <summary><b>Checklist</b></summary>
   
